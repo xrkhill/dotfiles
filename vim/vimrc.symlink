@@ -1,3 +1,53 @@
+set number
+highlight LineNr ctermfg=darkgrey
+
+set cindent
+set smartindent
+set autoindent
+
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set cinkeys=0{,0},:,0#,!,!^F
+
+" Map ctrl+return to auto/smart indent
+imap <C-Return> <CR><CR><C-o>k<Tab>
+
+" map Shift-tab to inverse tab (command mode)
+nmap <S-Tab> <<
+" map Shift-tab to inverse tab (insert mode)
+imap <S-Tab> <Esc><<i
+
+" Map jj to escape. must be typed quickly
+imap jj <Esc>
+
+" In visual mode, make indent/unindent reselect after indent
+vmap <TAB> >gv
+vmap <S-TAB> <gv
+
+" Startup Vundle
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+
+Plugin 'gmarik/Vundle.vim'
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'benmills/vimux'
+
+call vundle#end()            
+filetype plugin indent on
+
+" holman start
 syntax on
 
 " Wrap gitcommit file types at the appropriate length
