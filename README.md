@@ -1,4 +1,4 @@
-# holman does dotfiles
+# dave does holman's dotfiles
 
 ## dotfiles
 
