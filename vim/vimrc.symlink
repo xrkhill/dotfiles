@@ -54,7 +54,12 @@ syntax on
 filetype indent plugin on
 
 " vimux bindings
-nmap rp :VimuxPromptCommand<ENTER>
-map rl :VimuxRunLastCommand<ENTER>
-map ri :VimuxInspectRunner<ENTER>
+nmap rp :VimuxPromptCommand<CR>
+nmap rl :VimuxRunLastCommand<CR>
+nmap ri :VimuxInspectRunner<CR>
+nmap rx :VimuxCloseRunner<CR>
+nmap rz :VimuxZoomRunner<CR>
+nmap rs :VimuxInterruptRunner<CR>
+
+" Classic backspace
 nnoremap <BS> X
