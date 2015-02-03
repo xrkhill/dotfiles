@@ -8,7 +8,7 @@ set autoindent
 set expandtab
 set tabstop=2
 set shiftwidth=2
-set cinkeys=0{,0},:,0#,!,!^F
+set cinkeys=0{,0},:,0#,!^F
 
 " Map ctrl+return to auto/smart indent
 imap <C-Return> <CR><CR><C-o>k<Tab>
@@ -52,3 +52,9 @@ syntax on
 
 " Wrap gitcommit file types at the appropriate length
 filetype indent plugin on
+
+" vimux bindings
+nmap rp :VimuxPromptCommand<ENTER>
+map rl :VimuxRunLastCommand<ENTER>
+map ri :VimuxInspectRunner<ENTER>
+nnoremap <BS> X
