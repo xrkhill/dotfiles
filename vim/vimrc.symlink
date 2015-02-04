@@ -39,9 +39,10 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
+
 Plugin 'Rename2'
-"Plugin 'Valloric/YouCompleteMe'
 Plugin 'benmills/vimux'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()            
 filetype plugin indent on
