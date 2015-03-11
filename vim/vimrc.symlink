@@ -37,12 +37,10 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-
 Plugin 'Rename2'
 Plugin 'benmills/vimux'
 Plugin 'tpope/vim-fugitive'
+Plugin 'The-NERD-Commenter'
 
 call vundle#end()            
 filetype plugin indent on
