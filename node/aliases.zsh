@@ -1,0 +1,1 @@
+alias nid="npm install --save-dev"
