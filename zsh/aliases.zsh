@@ -8,7 +8,7 @@ alias hgrep="history | grep"
 alias rmv="mv -t /tmp"
 
 # Enhanced WHOIS lookups
-alias whois="whois -h whois-servers.net"
+#alias whois="whois -h whois-servers.net"
 
 # Misc
 alias youtube-dl-mp3="youtube-dl --extract-audio --audio-format mp3 --title --no-mtime"
