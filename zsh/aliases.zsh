@@ -4,6 +4,8 @@ alias ll='ls -pliah'
 alias pag="ps aux | grep"
 alias hgrep="history | grep"
 
+alias find-recently-modified="print -rl **/*(.0m)"
+
 # Move to /tmp instead of hard delete
 alias rmv="mv -t /tmp"
 
