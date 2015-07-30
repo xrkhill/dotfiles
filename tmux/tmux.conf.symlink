@@ -1,3 +1,4 @@
+# Add mouse support
 setw -g mode-mouse on
 setw -g mouse-select-window on
 setw -g mouse-select-pane on
