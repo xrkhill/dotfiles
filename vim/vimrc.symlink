@@ -1,5 +1,5 @@
-set number
-highlight LineNr ctermfg=darkgrey
+set nonumber
+#highlight LineNr ctermfg=darkgrey
 
 set cindent
 set smartindent
