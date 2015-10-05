@@ -22,6 +22,7 @@ alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 
 # git
 alias gpo="git push origin"
+alias gpu="git push upsteam"
 alias gcam="git commit -am"
 alias gcm="git commit -m"
 # mirror gh-pages with master & push
