@@ -1,5 +1,5 @@
 set nonumber
-#highlight LineNr ctermfg=darkgrey
+"highlight LineNr ctermfg=darkgrey
 
 set cindent
 set smartindent
@@ -25,6 +25,9 @@ imap jj <Esc>
 vmap <TAB> >gv
 vmap <S-TAB> <gv
 
+" mouse mode
+set mouse=a
+
 " Startup Vundle
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -41,6 +44,7 @@ Plugin 'Rename2'
 Plugin 'benmills/vimux'
 Plugin 'tpope/vim-fugitive'
 Plugin 'The-NERD-Commenter'
+Plugin 'fatih/vim-go'
 
 call vundle#end()            
 filetype plugin indent on
