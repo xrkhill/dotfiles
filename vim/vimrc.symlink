@@ -45,12 +45,16 @@ Plugin 'benmills/vimux'
 Plugin 'tpope/vim-fugitive'
 Plugin 'The-NERD-Commenter'
 Plugin 'fatih/vim-go'
+Plugin 'kien/ctrlp.vim'
 
 call vundle#end()            
 filetype plugin indent on
 
-" holman start
+" Syntax Highlighting on
 syntax on
+
+" Set md file as markdown
+autocmd BufNewFile,BufRead *.md set filetype=markdown
 
 " Wrap gitcommit file types at the appropriate length
 filetype indent plugin on
