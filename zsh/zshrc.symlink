@@ -45,3 +45,5 @@ export NVM_DIR="/Users/dave/.nvm"
 # shift-tab reverse complete
 bindkey '^[[Z' reverse-menu-complete
 
+# Activate fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
