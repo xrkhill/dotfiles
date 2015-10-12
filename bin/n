@@ -1,2 +1,2 @@
 #!/usr/bin/env zsh
-$EDITOR `find ~/Dropbox/Notes/ -type f | fzf`
+$EDITOR "`find ~/Dropbox/Notes/ -type f | fzf`"
