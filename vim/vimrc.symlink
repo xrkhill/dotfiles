@@ -56,6 +56,9 @@ Plugin 'The-NERD-Commenter'
 Plugin 'fatih/vim-go'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-markdown'
+"Plugin 'altercation/vim-colors-solarized'
+Plugin 'flazz/vim-colorschemes'
 call vundle#end()            
 filetype plugin indent on
 
@@ -64,6 +67,22 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Airline: use powerline glyphs for symbols
 let g:airline_powerline_fonts = 1
+
+" vim-markdown: no folding
+let g:vim_markdown_folding_disabled=1
+
+let g:markdown_fenced_languages = ['css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'rb=ruby', 'sass', 'xml']
+
+set background=dark
+colors hemisu
+"colorscheme bubblegum
+"colors noctu
+"colorscheme nefertiti
+"colorscheme pencil
+"colorscheme badwolf
+"" enable transparent term support
+"let g:solarized_termtrans=1
+"colorscheme solarized
 
 "make sure to escape the spaces in the name properly
 "set guifont=Source\ Code\ Pro\ for\ Powerline
