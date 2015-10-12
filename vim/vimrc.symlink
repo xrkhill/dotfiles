@@ -32,6 +32,15 @@ set mouse=a
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+" Syntax Highlighting on
+syntax on
+
+" Set md file as markdown
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+
+" Wrap gitcommit file types at the appropriate length
+filetype indent plugin on
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -46,18 +55,18 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'The-NERD-Commenter'
 Plugin 'fatih/vim-go'
 Plugin 'kien/ctrlp.vim'
-
+Plugin 'bling/vim-airline'
 call vundle#end()            
 filetype plugin indent on
 
-" Syntax Highlighting on
-syntax on
+" Airline: show buffers when only one tab open
+let g:airline#extensions#tabline#enabled = 1
 
-" Set md file as markdown
-autocmd BufNewFile,BufRead *.md set filetype=markdown
+" Airline: use powerline glyphs for symbols
+let g:airline_powerline_fonts = 1
 
-" Wrap gitcommit file types at the appropriate length
-filetype indent plugin on
+"make sure to escape the spaces in the name properly
+"set guifont=Source\ Code\ Pro\ for\ Powerline
 
 " vimux bindings
 nmap rp :VimuxPromptCommand<CR>
