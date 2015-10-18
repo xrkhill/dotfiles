@@ -24,8 +24,12 @@ set cinkeys=0{,0},:,0#,!^F
 " Map ctrl+return to auto/smart indent
 imap <C-Return> <CR><CR><C-o>k<Tab>
 
-" map Shift-tab to inverse tab (command mode)
+" map Shift-tab to inverse tab (normal mode)
+nmap <Tab> >>
+
+" map Shift-tab to inverse tab (normal mode)
 nmap <S-Tab> <<
+
 " map Shift-tab to inverse tab (insert mode)
 imap <S-Tab> <Esc><<i
 
