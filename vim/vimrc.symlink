@@ -5,9 +5,20 @@ set cindent
 set smartindent
 set autoindent
 
-set expandtab
-set tabstop=2
-set shiftwidth=2
+" Don't use spaces for tabs
+set noexpandtab
+
+" Show tabs as 4 cols
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+
+" Syntax-specific tabbing
+autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+
+" Pretty invisibles
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+
 set cinkeys=0{,0},:,0#,!^F
 
 " Map ctrl+return to auto/smart indent
