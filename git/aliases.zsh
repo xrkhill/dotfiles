@@ -16,6 +16,7 @@ alias gca='git commit -a'
 alias gco='git checkout'
 alias gcob='git checkout -b'
 alias gcb='git copy-branch-name'
+alias gcln='git clean -df'
 alias gb='git branch'
 alias grh='git reset --hard'
 alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
