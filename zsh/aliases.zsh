@@ -1,9 +1,9 @@
 alias reload!='. ~/.zshrc'
 
-alias ll='ls -pliah'
-alias pag="ps aux | grep"
-alias hgrep="history | grep"
+# Generic process finder 
+alias p="ps aux | grep"
 
+alias ll='ls -pliah'
 alias find-recently-modified="print -rl **/*(.0m)"
 
 # Move to /tmp instead of hard delete
