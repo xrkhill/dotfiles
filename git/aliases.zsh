@@ -8,6 +8,8 @@ fi
 
 # The rest of my fun git aliases
 alias gpl='git pull --prune'
+alias gplom='gpl origin master'
+alias gplod='gpl origin dev'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gp='git push'
 alias gd='git diff'
