@@ -33,3 +33,6 @@ windows:
       panes:
         - 
         - guard
+        - rails c
+        - rails s
+        - tail -f log/development.log
