@@ -3,3 +3,5 @@ setw -g mode-mouse on
 setw -g mouse-select-window on
 setw -g mouse-select-pane on
 
+bind k confirm kill-window
+bind K confirm kill-server
