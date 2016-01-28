@@ -1,4 +1,4 @@
 if (( $+commands[docker-machine] ))
 then
-  eval "$(docker-machine env default)"
+  #eval "$(docker-machine env default)"
 fi
