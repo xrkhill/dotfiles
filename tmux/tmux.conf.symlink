@@ -6,6 +6,10 @@ setw -g mouse-select-pane on
 bind k confirm kill-window
 bind K confirm kill-server
 
+# Start windows and panes at 1, not 0
+set -g base-index 1
+setw -g pane-base-index 1
+
 # Fix long name issue with tmuxinator
 set -g automatic-rename off
 set -g allow-rename off

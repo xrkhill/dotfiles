@@ -5,7 +5,7 @@ windows:
       layout: main-horizontal
       panes:
         - 
-        - b guard
+  - guard: b guard
   - console: bundle exec rails c
   - workers: bundle exec foreman start
   - logs: tail -f log/development.log

@@ -3,6 +3,9 @@ alias reload!='. ~/.zshrc'
 # Generic process finder 
 alias p="ps aux | grep"
 
+# grep
+alias grin='grep -rin'
+
 alias ll='ls -pliah'
 alias find-recently-modified="print -rl **/*(.0m)"
 
