@@ -19,7 +19,8 @@ alias rmv="mv -t /tmp"
 alias youtube-dl-mp3="youtube-dl --extract-audio --audio-format mp3 --title --no-mtime"
 
 # WAN IP
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias lan-ip="ipconfig getifaddr en0"
+alias wan-ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
