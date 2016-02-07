@@ -1,3 +1,31 @@
+" Startup Vundle
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'Rename2'
+Plugin 'benmills/vimux'
+Plugin 'tpope/vim-fugitive'
+Plugin 'The-NERD-Commenter'
+Plugin 'fatih/vim-go'
+Plugin 'kien/ctrlp.vim'
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-markdown'
+"Plugin 'altercation/vim-colors-solarized'
+Plugin 'flazz/vim-colorschemes'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" K, Add custom stuff below --- 
+
 set nonumber
 "highlight LineNr ctermfg=darkgrey
 
@@ -43,39 +71,12 @@ vmap <S-TAB> <gv
 " mouse mode
 set mouse=a
 
-" Startup Vundle
-set nocompatible              " be iMproved, required
-filetype off                  " required
 
 " Syntax Highlighting on
 syntax on
 
 " Set md file as markdown
 autocmd BufNewFile,BufRead *.md set filetype=markdown
-
-" Wrap gitcommit file types at the appropriate length
-filetype indent plugin on
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-Plugin 'Rename2'
-Plugin 'benmills/vimux'
-Plugin 'tpope/vim-fugitive'
-Plugin 'The-NERD-Commenter'
-Plugin 'fatih/vim-go'
-Plugin 'kien/ctrlp.vim'
-Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-markdown'
-"Plugin 'altercation/vim-colors-solarized'
-Plugin 'flazz/vim-colorschemes'
-call vundle#end()            
-filetype plugin indent on
 
 " Airline: show buffers when only one tab open
 let g:airline#extensions#tabline#enabled = 1
