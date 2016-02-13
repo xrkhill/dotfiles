@@ -117,6 +117,11 @@ nmap rs :VimuxInterruptRunner<CR>
 
 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
+" Show nerdtree if no file args
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" close if only window is nerdtree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Classic backspace
 nnoremap <BS> X
