@@ -15,6 +15,7 @@ Plugin 'benmills/vimux'
 Plugin 'tpope/vim-fugitive'
 Plugin 'The-NERD-Commenter'
 Plugin 'fatih/vim-go'
+Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-markdown'
@@ -113,6 +114,9 @@ nmap ri :VimuxInspectRunner<CR>
 nmap rx :VimuxCloseRunner<CR>
 nmap rz :VimuxZoomRunner<CR>
 nmap rs :VimuxInterruptRunner<CR>
+
+" nerdtree
+map <C-n> :NERDTreeToggle<CR>
 
 " Classic backspace
 nnoremap <BS> X
