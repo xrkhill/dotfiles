@@ -20,6 +20,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-endwise'
 "Plugin 'altercation/vim-colors-solarized'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'danro/rename.vim'
@@ -52,6 +53,9 @@ autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 set cinkeys=0{,0},:,0#,!^F
+
+" set normal C-o to save, for double tap
+nmap <C-o> :w<cr>
 
 " map buffer movement (normal)
 nmap gn :bn<cr>
