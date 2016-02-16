@@ -19,6 +19,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-rails'
 "Plugin 'altercation/vim-colors-solarized'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'danro/rename.vim'
@@ -74,6 +75,8 @@ vmap <S-TAB> <gv
 " mouse mode
 set mouse=a
 
+" enable project rc
+set exrc
 
 " Syntax Highlighting on
 syntax on
