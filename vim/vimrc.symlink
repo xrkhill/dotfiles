@@ -18,7 +18,8 @@ Plugin 'fatih/vim-go'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-markdown'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-endwise'
 "Plugin 'altercation/vim-colors-solarized'
@@ -58,8 +59,8 @@ set cinkeys=0{,0},:,0#,!^F
 nmap <C-o> :w<cr>
 
 " map buffer movement (normal)
-nmap gn :bn<cr>
-nmap gp :bp<cr>
+nmap gn :bn!<cr>
+nmap gp :bp!<cr>
 nmap gd :bd<cr>  
 
 " Map ctrl+return to auto/smart indent
