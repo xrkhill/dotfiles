@@ -22,7 +22,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-endwise'
-"Plugin 'altercation/vim-colors-solarized'
+Plugin 'tyru/open-browser.vim'
+Plugin 'wincent/command-t'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'danro/rename.vim'
 Plugin 'jiangmiao/auto-pairs'
@@ -56,12 +57,14 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set cinkeys=0{,0},:,0#,!^F
 
 " set normal C-o to save, for double tap
-nmap <C-o> :w<cr>
+nmap <C-o> :w<esc><esc>
 
 " map buffer movement (normal)
 nmap gn :bn!<cr>
 nmap gp :bp!<cr>
 nmap gd :bd<cr>  
+"nmap <leader-Tab> :bn!<cr>
+"nmap <leader-S-Tab> :bp!<cr>
 
 " Map ctrl+return to auto/smart indent
 imap <C-Return> <CR><CR><C-o>k<Tab>
@@ -131,16 +134,11 @@ nmap rs :VimuxInterruptRunner<CR>
 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
 
-" Show nerdtree if no file args
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
 " close if only window is nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " quit vim if no buffers
 autocmd BufDelete * if len(filter(range(1, bufnr('$')), '! empty(bufname(v:val)) && buflisted(v:val)')) == 1 | quit | endif
-
 
 " Classic backspace
 nnoremap <BS> X
