@@ -59,27 +59,27 @@ set cinkeys=0{,0},:,0#,!^F
 " set normal C-o to save, for double tap
 nmap <C-o> :w<esc><esc>
 
-" map buffer movement (normal)
-nmap gn :bn!<cr>
-nmap gp :bp!<cr>
-nmap gd :bd<cr>  
-"nmap <leader-Tab> :bn!<cr>
-"nmap <leader-S-Tab> :bp!<cr>
+" map buffer movement (normal) 
+nmap <Leader>s :bn!<cr>
+nmap <Leader>a :bp!<cr>
+nmap <Leader>d :bd<cr> 
+nmap <Leader>f :b<cr>
+
 
 " Map ctrl+return to auto/smart indent
 imap <C-Return> <CR><CR><C-o>k<Tab>
 
-" map Shift-tab to inverse tab (normal mode)
+" lazy indent
 nmap <Tab> >>
 
-" map Shift-tab to inverse tab (normal mode)
+" lazy unindent
 nmap <S-Tab> <<
-
-" map Shift-tab to inverse tab (insert mode)
 imap <S-Tab> <Esc><<i
 
-" Map jj to escape. must be typed quickly
-imap jj <Esc>
+" Map insert abnormals. Must be typed quickly!
+" imap wq <Esc>:wq<cr>
+" imap ww <Esc>:w<cr>i
+" imap jj <Esc>
 
 " In visual mode, make indent/unindent reselect after indent
 vmap <TAB> >gv
