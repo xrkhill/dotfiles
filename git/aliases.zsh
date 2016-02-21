@@ -14,6 +14,7 @@ alias gl="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(y
 alias gp='git push'
 # pretty diff with colors instead of prefixed +|- (better for yanking)
 alias gd='git diff --color | sed -E "s/^([^-+ ]*)[-+ ]/\\1/" | less -r'
+alias gd+='git diff'
 alias gc='git commit'
 alias gca='git commit -a'
 alias gco='git checkout'
