@@ -1,7 +1,5 @@
 # Add mouse support
-setw -g mode-mouse on
-setw -g mouse-select-window on
-setw -g mouse-select-pane on
+setw -g mouse on
 
 bind k confirm kill-window
 bind K confirm kill-server
@@ -49,3 +47,17 @@ set-window-option -g window-status-current-attr bright
 # status bar
 #set -g status-right-length 60
 #set -g status-right "#[fg=blue]#S #I:#P #[fg=yellow]:: %d %b %Y #[fg=green]:: %l:%M %p :: #(date -u | awk '{print $4}')::"
+
+# List of core-ish plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+
+# Other Plugins
+set -g @plugin "jlipps/tmux-safekill"
+# Other examples:
+# set -g @plugin 'github_username/plugin_name'
+# set -g @plugin 'git@github.com/user/plugin'
+# set -g @plugin 'git@bitbucket.com/user/plugin'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
