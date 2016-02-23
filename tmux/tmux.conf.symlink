@@ -1,5 +1,9 @@
 # Add mouse support
 setw -g mouse on
+# allow scrolling
+bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'copy-mode -e'"
+
+
 
 bind k confirm kill-window
 bind K confirm kill-server
@@ -54,10 +58,6 @@ set -g @plugin 'tmux-plugins/tmux-sensible'
 
 # Other Plugins
 set -g @plugin "jlipps/tmux-safekill"
-# Other examples:
-# set -g @plugin 'github_username/plugin_name'
-# set -g @plugin 'git@github.com/user/plugin'
-# set -g @plugin 'git@bitbucket.com/user/plugin'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
