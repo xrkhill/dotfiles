@@ -28,6 +28,8 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 Plugin 'danro/rename.vim'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'Valloric/YouCompleteMe'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -142,3 +144,4 @@ autocmd BufDelete * if len(filter(range(1, bufnr('$')), '! empty(bufname(v:val))
 
 " Classic backspace
 nnoremap <BS> X
+
