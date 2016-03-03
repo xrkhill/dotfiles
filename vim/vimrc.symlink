@@ -61,10 +61,11 @@ set cinkeys=0{,0},:,0#,!^F
 
 " set normal C-o to save, for double tap
 nmap <C-o> :w<esc><esc>
+nmap <C-i> :q<cr>
 
 " map buffer movement (normal) 
-nmap <Leader>s :bn!<cr>
-nmap <Leader>a :bp!<cr>
+nmap <Leader>s :bn!<esc><cr>
+nmap <Leader>a :bp!<esc><cr>
 nmap <Leader>d :bd<cr> 
 nmap <Leader>f :b<cr>
 
@@ -72,11 +73,9 @@ nmap <Leader>f :b<cr>
 imap <C-Return> <CR><CR><C-o>k<Tab>
 
 " lazy indent
-nmap <Tab> >>
-
-" lazy unindent
-nmap <S-Tab> <<
-imap <S-Tab> <Esc><<i
+"nmap <Tab> >>
+"nmap <S-Tab> <<
+"imap <S-Tab> <Esc><<i
 
 " Map insert abnormals. Must be typed quickly!
 " imap wq <Esc>:wq<cr>
