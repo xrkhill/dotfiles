@@ -106,8 +106,10 @@ let g:airline_powerline_fonts = 1
 
 " vim-markdown: no folding
 let g:vim_markdown_folding_disabled=1
-
 let g:markdown_fenced_languages = ['css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'rb=ruby', 'sass', 'xml']
+
+" CtrlP
+let g:ctrlp_show_hidden = 1
 
 set background=dark
 colors molokai
