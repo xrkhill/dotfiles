@@ -59,7 +59,7 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 set cinkeys=0{,0},:,0#,!^F
 
-" beginning/end of line (insert)
+" beginning/end of line, shell style (insert)
 inoremap <C-e> <Esc>A
 inoremap <C-a> <Esc>I
 
