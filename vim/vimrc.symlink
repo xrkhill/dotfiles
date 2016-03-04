@@ -59,6 +59,10 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 set cinkeys=0{,0},:,0#,!^F
 
+" beginning/end of line (insert)
+inoremap <C-e> <Esc>A
+inoremap <C-a> <Esc>I
+
 " set normal C-o to save, for double tap
 nmap <C-o> :w<esc><esc>
 nmap <C-i> :q<cr>
@@ -110,6 +114,7 @@ let g:markdown_fenced_languages = ['css', 'erb=eruby', 'javascript', 'js=javascr
 
 " CtrlP
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_reuse_window  = 'startify' " fix new window split issue
 
 " YCM
 let g:ycm_filetype_blacklist = {}

@@ -46,6 +46,9 @@ export NVM_DIR="/Users/dave/.nvm"
 # shift-tab reverse complete
 bindkey '^[[Z' reverse-menu-complete
 
+# allow C-a | C-e in tmux 
+bindkey -e 
+
 # Activate fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
