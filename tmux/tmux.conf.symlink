@@ -16,10 +16,8 @@ bind -n S-Left previous-window
 
 # try to maintain pwd (warning: does not work in sudo/su sessions)
 # Saner splitting.
-bind '"' split-window -c "#{pane_current_path}" -h
-bind '%' split-window -c "#{pane_current_path}" -v
-
-# # Better name management
+bind '"' split-window -c "#{pane_current_path}" -v
+bind '%' split-window -c "#{pane_current_path}" -h
 bind c new-window -c "#{pane_current_path}"
 
 # Fix long name issue with tmuxinator
