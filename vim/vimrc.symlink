@@ -68,6 +68,10 @@ inoremap <C-a> <Esc>I
 nmap <C-o> :w<esc><esc>
 nmap <C-i> :q<cr>
 
+" why was tab mapped to :q ?!?! 
+nmap <Tab> >>
+nmap <S-Tab> <<
+
 " map buffer movement (normal) 
 nmap <Leader>s :bn!<esc><cr>
 nmap <Leader>a :bp!<esc><cr>
