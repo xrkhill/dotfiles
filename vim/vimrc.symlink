@@ -69,8 +69,8 @@ nmap <C-o> :w<esc><esc>
 nmap <C-i> :q<cr>
 
 " why was tab mapped to :q ?!?! 
-nmap <Tab> >>
-nmap <S-Tab> <<
+nmap <Tab> <Nop>
+nmap <S-Tab> <Nop>
 
 " map buffer movement (normal) 
 nmap <Leader>s :bn!<esc><cr>
