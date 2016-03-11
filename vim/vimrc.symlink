@@ -30,6 +30,7 @@ Plugin 'danro/rename.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/EasyGrep'
+Plugin 'editorconfig/editorconfig-vim.git'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
