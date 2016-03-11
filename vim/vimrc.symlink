@@ -52,6 +52,9 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
+" hide modified buffers instead of closing them 
+set hidden
+
 " Syntax-specific tabbing
 autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
