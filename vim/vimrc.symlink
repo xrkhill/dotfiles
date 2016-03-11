@@ -53,7 +53,8 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
-set hlsearch
+" hide modified buffers instead of closing them 
+set hidden
 
 " Syntax-specific tabbing
 autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
@@ -101,8 +102,15 @@ vmap <S-TAB> <gv
 " mouse mode
 set mouse=a
 
+" Smooth scroll
+map <ScrollWheelUp> <C-Y>
+map <ScrollWheelDown> <C-E>
+
 " enable project rc
 set exrc
+
+" search highlighting
+set hlsearch
 
 " Syntax Highlighting on
 syntax on
