@@ -101,8 +101,15 @@ vmap <S-TAB> <gv
 " mouse mode
 set mouse=a
 
+" Smooth scroll
+map <ScrollWheelUp> <C-Y>
+map <ScrollWheelDown> <C-E>
+
 " enable project rc
 set exrc
+
+" search highlighting
+set hlsearch
 
 " Syntax Highlighting on
 syntax on
