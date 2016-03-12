@@ -35,3 +35,8 @@ curly_bracket_next_line = true
 [*.sh]
 indent_style = space
 indent_size = 4
+
+[*.{md,markdown}]
+indent_style = tab
+indent_size = 4
+
