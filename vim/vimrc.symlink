@@ -15,11 +15,12 @@ Plugin 'benmills/vimux'
 Plugin 'tpope/vim-fugitive'
 Plugin 'The-NERD-Commenter'
 Plugin 'fatih/vim-go'
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+"Plugin 'gabrielelana/vim-markdown'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-endwise'
 Plugin 'tyru/open-browser.vim'
@@ -28,15 +29,16 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 Plugin 'danro/rename.vim'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/EasyGrep'
 Plugin 'editorconfig/editorconfig-vim.git'
+"Plugin 'majutsushi/tagbar'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" K, Add custom stuff below --- 
+" K, Add custom stuff below ---
 
 set nonumber
 "highlight LineNr ctermfg=darkgrey
@@ -53,88 +55,8 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
-" hide modified buffers instead of closing them 
+" hide modified buffers instead of closing them
 set hidden
-
-" Syntax-specific tabbing
-autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-
-" Pretty invisibles
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-
-set cinkeys=0{,0},:,0#,!^F
-
-" beginning/end of line, shell style (insert)
-inoremap <C-e> <Esc>A
-inoremap <C-a> <Esc>I
-
-" set normal C-o to save, for double tap
-nmap <C-o> :w<esc><esc>
-nmap <C-i> :q<cr>
-
-" why was tab mapped to :q ?!?! 
-nmap <Tab> <Nop>
-nmap <S-Tab> <Nop>
-
-" map buffer movement (normal) 
-nmap <Leader>s :bn!<esc><cr>
-nmap <Leader>a :bp!<esc><cr>
-nmap <Leader>d :bd<esc><cr> 
-nmap <Leader>f :b<cr>
-
-" Map ctrl+return to auto/smart indent
-imap <C-Return> <CR><CR><C-o>k<Tab>
-
-" lazy indent
-"nmap <Tab> >>
-"nmap <S-Tab> <<
-"imap <S-Tab> <Esc><<i
-
-" Map insert abnormals. Must be typed quickly!
-" imap wq <Esc>:wq<cr>
-" imap ww <Esc>:w<cr>i
-" imap jj <Esc>
-
-" In visual mode, make indent/unindent reselect after indent
-vmap <TAB> >gv
-vmap <S-TAB> <gv
-
-" mouse mode
-set mouse=a
-
-" Smooth scroll
-map <ScrollWheelUp> <C-Y>
-map <ScrollWheelDown> <C-E>
-
-" enable project rc
-set exrc
-
-" search highlighting
-set hlsearch
-
-" Syntax Highlighting on
-syntax on
-
-" Set md file as markdown
-autocmd BufNewFile,BufRead *.md set filetype=markdown
-
-" Airline: show buffers when only one tab open
-let g:airline#extensions#tabline#enabled = 1
-
-" Airline: use powerline glyphs for symbols
-let g:airline_powerline_fonts = 1
-
-" vim-markdown: no folding
-let g:vim_markdown_folding_disabled=1
-let g:markdown_fenced_languages = ['css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'rb=ruby', 'sass', 'xml']
-
-" CtrlP
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_reuse_window  = 'startify' " fix new window split issue
-let g:ctrlp_open_new_file = 'r' " open new file in current window
-
-" YCM ON EVERYTHING
-"let g:ycm_filetype_blacklist = {}
 
 set background=dark
 colors molokai
@@ -151,6 +73,94 @@ colors molokai
 "make sure to escape the spaces in the name properly
 "set guifont=Source\ Code\ Pro\ for\ Powerline
 
+" Pretty invisibles
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+
+set cinkeys=0{,0},:,0#,!^F
+
+" beginning/end of line, shell style (insert)
+inoremap <C-e> <Esc>A
+inoremap <C-a> <Esc>I
+
+" set normal C-o to save, for double tap
+nmap <C-o> :w<esc><esc>
+nmap <C-i> :q<cr>
+
+" why was tab mapped to :q ?!?!
+nmap <Tab> <Nop>
+nmap <S-Tab> <Nop>
+
+" map buffer movement (normal)
+nmap <Leader>s :bn!<esc><cr>
+nmap <Leader>a :bp!<esc><cr>
+nmap <Leader>d :bd<esc><cr>
+nmap <Leader>f :b<cr>
+
+" Map ctrl+return to auto/smart indent
+imap <C-Return> <CR><CR><C-o>k<Tab>
+
+" lazy indent
+nmap <Tab> >>
+nmap <S-Tab> <<
+"imap <S-Tab> <Esc><<i
+
+" Map insert abnormals. Must be typed quickly!
+" imap wq <Esc>:wq<cr>
+" imap ww <Esc>:w<cr>i
+" imap jj <Esc>
+
+" In visual mode, make indent/unindent reselect after indent
+vmap <TAB> >gv
+vmap <S-TAB> <gv
+
+" mouse mode
+set mouse=a
+
+" tmux mousefix
+if &term =~ '^screen'
+    " tmux knows the extended mouse mode
+    set ttymouse=xterm2
+endif
+
+
+
+" Smooth scroll
+"map <ScrollWheelUp> <C-Y>
+"map <ScrollWheelDown> <C-E>
+
+" enable project rc
+set exrc
+
+" search highlighting
+set hlsearch
+
+" Syntax Highlighting on
+syntax on
+
+" Set md file as markdown
+"autocmd BufNewFile,BufRead *.md set filetype=markdown
+
+" Airline: show buffers when only one tab open
+let g:airline#extensions#tabline#enabled = 1
+
+" Airline: use powerline glyphs for symbols
+let g:airline_powerline_fonts = 1
+
+" vim-markdown: no folding
+let g:vim_markdown_folding_disabled=1
+let g:markdown_fenced_languages = ['css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'rb=ruby', 'sass', 'xml']
+
+" gabrielelana/vim-markdown
+let g:markdown_enable_spell_checking = 0 " disable spellcheck
+
+" CtrlP
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_reuse_window  = 'startify' " fix new window split issue
+let g:ctrlp_open_new_file = 'r' " open new file in current window
+
+" YCM ON EVERYTHING
+"let g:ycm_filetype_blacklist = {}
+
 " vimux bindings
 nmap rp :VimuxPromptCommand<CR>
 nmap rl :VimuxRunLastCommand<CR>
@@ -159,11 +169,15 @@ nmap rx :VimuxCloseRunner<CR>
 nmap rz :VimuxZoomRunner<CR>
 nmap rs :VimuxInterruptRunner<CR>
 
+" tagbar
+let g:tagbar_width=26                          " Default is 40, seems too wide
+noremap <Leader>y :TagbarToggle<cr>
+
 " nerdtree
-map <C-n> :NERDTreeToggle<CR>
+"map <C-n> :NERDTreeToggle<CR>
 
 " close if only window is nerdtree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " quit vim if no buffers
 autocmd BufDelete * if len(filter(range(1, bufnr('$')), '! empty(bufname(v:val)) && buflisted(v:val)')) == 1 | quit | endif
