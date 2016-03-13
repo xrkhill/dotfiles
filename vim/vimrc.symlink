@@ -15,7 +15,7 @@ Plugin 'benmills/vimux'
 Plugin 'tpope/vim-fugitive'
 Plugin 'The-NERD-Commenter'
 Plugin 'fatih/vim-go'
-"Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'godlygeek/tabular'
@@ -24,15 +24,17 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-endwise'
 Plugin 'tyru/open-browser.vim'
-Plugin 'wincent/command-t'
+"Plugin 'wincent/command-t'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 Plugin 'danro/rename.vim'
-Plugin 'jiangmiao/auto-pairs'
+"Plugin 'jiangmiao/auto-pairs'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/EasyGrep'
 Plugin 'editorconfig/editorconfig-vim.git'
-"Plugin 'majutsushi/tagbar'
+"Plugin 'xolox/vim-misc'
+"Plugin 'xolox/vim-easytags'
+Plugin 'majutsushi/tagbar'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -169,18 +171,24 @@ nmap rx :VimuxCloseRunner<CR>
 nmap rz :VimuxZoomRunner<CR>
 nmap rs :VimuxInterruptRunner<CR>
 
+" tags
+"set tags=./tags
+
 " tagbar
 let g:tagbar_width=26                          " Default is 40, seems too wide
 noremap <Leader>y :TagbarToggle<cr>
 
+" easytags
+"let g:easytags_dynamic_files = 1 " write tags file to tags config option, or global is it does not exist
+
 " nerdtree
-"map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 
 " close if only window is nerdtree
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " quit vim if no buffers
-autocmd BufDelete * if len(filter(range(1, bufnr('$')), '! empty(bufname(v:val)) && buflisted(v:val)')) == 1 | quit | endif
+"autocmd BufDelete * if len(filter(range(1, bufnr('$')), '! empty(bufname(v:val)) && buflisted(v:val)')) == 1 | quit | endif
 
 " Classic backspace
 nnoremap <BS> X
