@@ -62,6 +62,7 @@ set hidden
 
 set background=dark
 colors molokai
+"colors blackboard
 "colors hemisu
 "colorscheme bubblegum
 "colors noctu
