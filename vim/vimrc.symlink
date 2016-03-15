@@ -75,8 +75,18 @@ colors molokai
 "make sure to escape the spaces in the name properly
 "set guifont=Source\ Code\ Pro\ for\ Powerline
 
+"Invisible character colors
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
+
 " Pretty invisibles
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+"set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
 
 set cinkeys=0{,0},:,0#,!^F
 
