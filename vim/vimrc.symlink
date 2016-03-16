@@ -35,6 +35,7 @@ Plugin 'editorconfig/editorconfig-vim.git'
 "Plugin 'xolox/vim-misc'
 "Plugin 'xolox/vim-easytags'
 Plugin 'majutsushi/tagbar'
+Plugin 'mhinz/vim-startify'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -90,6 +91,9 @@ set listchars=tab:▸\ ,eol:¬
 nmap <leader>l :set list!<CR>
 
 set cinkeys=0{,0},:,0#,!^F
+
+" Classic backspace
+nnoremap <BS> X
 
 " beginning/end of line, shell style (insert)
 inoremap <C-e> <Esc>A
@@ -201,6 +205,8 @@ map <C-n> :NERDTreeToggle<CR>
 " quit vim if no buffers
 "autocmd BufDelete * if len(filter(range(1, bufnr('$')), '! empty(bufname(v:val)) && buflisted(v:val)')) == 1 | quit | endif
 
-" Classic backspace
-nnoremap <BS> X
-
+" startify
+let g:startify_custom_header = []
+let g:startify_relative_path = 1
+let g:startify_list_order = ['dir', 'files', 'bookmarks', 'sessions']
+let g:startify_change_to_dir = 1
