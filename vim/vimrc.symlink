@@ -90,10 +90,14 @@ set listchars=tab:▸\ ,eol:¬
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
 
-set cinkeys=0{,0},:,0#,!^F
-
 " Classic backspace
 nnoremap <BS> X
+
+nnoremap <F2> :set invpaste paste?<CR>
+imap <F2> <C-O>:set invpaste paste?<CR>
+set pastetoggle=<F2>
+
+set cinkeys=0{,0},:,0#,!^F
 
 " beginning/end of line, shell style (insert)
 inoremap <C-e> <Esc>A
