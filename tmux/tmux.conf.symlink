@@ -14,6 +14,11 @@ setw -g pane-base-index 1
 bind -n S-Right next-window
 bind -n S-Left previous-window
 
+# ctrl-shift arrows to move window
+bind-key -n C-S-Left swap-window -t -1
+bind-key -n C-S-Right swap-window -t +1
+
+
 # try to maintain pwd (warning: does not work in sudo/su sessions)
 # Saner splitting.
 bind '"' split-window -c "#{pane_current_path}" -v
@@ -40,15 +45,15 @@ setw -g monitor-activity on
 # set color for status bar
 set-option -g status-bg colour235 #base02
 set-option -g status-fg yellow #yellow
-set-option -g status-attr dim 
+set-option -g status-attr dim
 
 # set window list colors - red for active and cyan for inactive
 set-window-option -g window-status-fg brightblue #base0
-set-window-option -g window-status-bg colour236 
+set-window-option -g window-status-bg colour236
 set-window-option -g window-status-attr dim
 
 set-window-option -g window-status-current-fg brightgreen
-set-window-option -g window-status-current-bg colour236 
+set-window-option -g window-status-current-bg colour236
 set-window-option -g window-status-current-attr bright
 
 # show session name, window & pane number, date and time on right side of
