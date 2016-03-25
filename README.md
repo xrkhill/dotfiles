@@ -1,6 +1,10 @@
 # dave does dotfiles
 
-Contains a mix of bash, zsh, and sh (works in both) scripts.
+Contains helpful tools, aliases, and configuration.
+
+* Extension legend
+	* `.sh` - Helper scripts
+	* `.sh-common` - Config files that work on bash AND zsh
 
 ## install
 
