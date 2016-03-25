@@ -14,6 +14,7 @@ fi
 # all of our zsh files
 typeset -U config_files
 config_files=($ZSH/**/*.zsh)
+sh_common_files=($ZSH/**/*.sh-common)
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}
@@ -27,6 +28,11 @@ do
   source $file
 done
 
+# load common sh files
+for file in ${${sh_common_files}}
+do
+  source $file
+done
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
 compinit
@@ -46,8 +52,8 @@ export NVM_DIR="/Users/dave/.nvm"
 # shift-tab reverse complete
 bindkey '^[[Z' reverse-menu-complete
 
-# allow C-a | C-e in tmux 
-bindkey -e 
+# allow C-a | C-e in tmux
+bindkey -e
 
 # Activate fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
