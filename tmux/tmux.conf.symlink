@@ -1,5 +1,6 @@
 # Add mouse support
 setw -g mouse on
+
 # allow scrolling
 bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'copy-mode -e'"
 
@@ -17,7 +18,6 @@ bind -n S-Left previous-window
 # ctrl-shift arrows to move window
 bind-key -n C-S-Left swap-window -t -1
 bind-key -n C-S-Right swap-window -t +1
-
 
 # try to maintain pwd (warning: does not work in sudo/su sessions)
 # Saner splitting.
