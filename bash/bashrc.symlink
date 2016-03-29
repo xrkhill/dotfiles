@@ -1,22 +1,18 @@
-export BSH=$HOME/.dotfiles
+# Add `~/bin` to the `$PATH`
+export PATH="$HOME/bin:$PATH";
 
-# your project folder that we can `c [tab]` to
-export PROJECTS=~/Projects
+# dotfiles src
+export DOTFILES=$HOME/.dotfiles
 
-# all of our zsh files
-typeset -U config_files
-config_files=($BSH/**/*.bash)
-
-# load the path files
-for file in ${(M)config_files:#*/path.bash}
+# Load commonfiles
+for sh_common in `ls $DOTFILES/**/*.sh-common`
 do
-  source $file
+	#echo "sourcing ${sh_common}"
+	source $sh_common
 done
 
-# load everything but the path and completion files
-for file in ${${config_files:#*/path.bash}}
+# Load bashfiles
+for scriptfile in `ls $DOTFILES/**/*.bash`
 do
-  source $file
+   source $scriptfile
 done
-
-unset config_files
