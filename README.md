@@ -5,6 +5,8 @@ Contains helpful tools, aliases, and configuration.
 * Extension legend
 	* `.sh` - Helper scripts
 	* `.sh-common` - Config files that work on bash AND zsh
+	* `.bash` - Loaded from .bashrc
+	* `.zsh` - Loaded from .zshrc
 
 ## install
 
