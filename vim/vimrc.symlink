@@ -100,6 +100,15 @@ set pastetoggle=<F2>
 
 set cinkeys=0{,0},:,0#,!^F
 
+" make C-C esc for InsertLeave, etc (insert)
+ino <C-C> <Esc>
+
+" visual indicator for insert mode
+augroup InsertColors
+	au InsertEnter * colors dracula | AirlineRefresh
+	au InsertLeave * colors molokai | AirlineRefresh
+augroup END
+
 " beginning/end of line, shell style (insert)
 inoremap <C-e> <Esc>A
 inoremap <C-a> <Esc>I
