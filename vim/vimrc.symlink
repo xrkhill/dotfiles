@@ -12,10 +12,13 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Rename2'
 Plugin 'benmills/vimux'
+"Plugin 'tpope/vim-surround'
+"Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-fugitive'
 Plugin 'The-NERD-Commenter'
 Plugin 'fatih/vim-go'
 Plugin 'scrooloose/nerdtree'
+"Plugin 'tmhedberg/matchit'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'godlygeek/tabular'
@@ -30,7 +33,7 @@ Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 Plugin 'danro/rename.vim'
 "Plugin 'jiangmiao/auto-pairs'
 "Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-scripts/EasyGrep'
+"Plugin 'vim-scripts/EasyGrep'
 Plugin 'editorconfig/editorconfig-vim.git'
 "Plugin 'xolox/vim-misc'
 "Plugin 'xolox/vim-easytags'
@@ -44,6 +47,7 @@ filetype plugin indent on    " required
 
 " K, Add custom stuff below ---
 
+" Line Numbers
 set nonumber
 "highlight LineNr ctermfg=darkgrey
 
@@ -94,9 +98,14 @@ nmap <leader>l :set list!<CR>
 " Classic backspace
 nnoremap <BS> X
 
+" Paste mode toggle
 nnoremap <F2> :set invpaste paste?<CR>
 imap <F2> <C-O>:set invpaste paste?<CR>
 set pastetoggle=<F2>
+
+" number mode toggle
+noremap <F3> :set invnumber<CR>
+inoremap <F3> <C-O>:set invnumber<CR>
 
 set cinkeys=0{,0},:,0#,!^F
 
@@ -105,7 +114,9 @@ ino <C-C> <Esc>
 
 " visual indicator for insert mode
 augroup InsertColors
+	"au InsertEnter * highlight Normal ctermbg=darkgrey
 	au InsertEnter * colors dracula | AirlineRefresh
+	"au InsertLeave * highlight Normal ctermbg=grey
 	au InsertLeave * colors molokai | AirlineRefresh
 augroup END
 
