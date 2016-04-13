@@ -183,6 +183,9 @@ syntax on
 " Set md file as markdown
 "autocmd BufNewFile,BufRead *.md set filetype=markdown
 
+" Ack: map
+nmap <Leader>vv :Ack<cr>
+
 " Airline: show buffers when only one tab open
 let g:airline#extensions#tabline#enabled = 1
 
@@ -211,12 +214,12 @@ let g:ctrlp_open_new_file = 'r' " open new file in current window
 "let g:ycm_filetype_blacklist = {}
 
 " vimux bindings
-nmap rp :VimuxPromptCommand<CR>
-nmap rl :VimuxRunLastCommand<CR>
-nmap ri :VimuxInspectRunner<CR>
-nmap rx :VimuxCloseRunner<CR>
-nmap rz :VimuxZoomRunner<CR>
-nmap rs :VimuxInterruptRunner<CR>
+nmap <Leader>rp :VimuxPromptCommand<CR>
+nmap <Leader>rl :VimuxRunLastCommand<CR>
+nmap <Leader>ri :VimuxInspectRunner<CR>
+nmap <Leader>rx :VimuxCloseRunner<CR>
+nmap <Leader>rz :VimuxZoomRunner<CR>
+nmap <Leader>rs :VimuxInterruptRunner<CR>
 
 " tags
 "set tags=./tags
