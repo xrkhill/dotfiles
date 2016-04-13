@@ -116,12 +116,10 @@ set cinkeys=0{,0},:,0#,!^F
 ino <C-C> <Esc>
 
 " visual indicator for insert mode
-augroup InsertColors
-	"au InsertEnter * highlight Normal ctermbg=darkgrey
-	au InsertEnter * colors dracula | AirlineRefresh
-	"au InsertLeave * highlight Normal ctermbg=grey
-	au InsertLeave * colors molokai | AirlineRefresh
-augroup END
+"augroup InsertColors
+	"au InsertEnter * colors dracula | AirlineRefresh
+	"au InsertLeave * colors molokai | AirlineRefresh
+"augroup END
 
 " beginning/end of line, shell style (insert)
 inoremap <C-e> <Esc>A
@@ -190,6 +188,9 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Airline: use powerline glyphs for symbols
 let g:airline_powerline_fonts = 1
+
+" Airline: show all the time, not just on splits
+set laststatus=2
 
 " vim-markdown: no folding
 let g:vim_markdown_folding_disabled=1
