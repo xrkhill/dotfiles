@@ -156,6 +156,9 @@ nmap <S-Tab> <<
 vmap <TAB> >gv
 vmap <S-TAB> <gv
 
+" select pasted text
+nmap gp `[v`]
+
 " mouse mode
 set mouse=a
 
