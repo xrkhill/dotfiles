@@ -17,7 +17,7 @@ Plugin 'benmills/vimux'
 Plugin 'tpope/vim-fugitive'
 Plugin 'The-NERD-Commenter'
 Plugin 'fatih/vim-go'
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
 "Plugin 'tmhedberg/matchit'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'bling/vim-airline'
@@ -84,7 +84,7 @@ colors molokai
 "set guifont=Source\ Code\ Pro\ for\ Powerline
 
 " copy unnamed register to clipboard in macvim/gvim
-set clipboard=unnamed
+"set clipboard=unnamed
 
 "Invisible character colors
 highlight NonText guifg=#4a4a59
@@ -187,6 +187,12 @@ syntax on
 " Set md file as markdown
 "autocmd BufNewFile,BufRead *.md set filetype=markdown
 
+" netrw/Explorer
+let g:netrw_preview = 1 " vertical split
+let g:netrw_liststyle=3 " tree list style
+" nerdtree-similar keymap
+nmap <C-n> :Ex<CR>
+
 " Ack: map
 nmap <Leader>vv :Ack<cr>
 
@@ -236,7 +242,7 @@ noremap <Leader>y :TagbarToggle<cr>
 "let g:easytags_dynamic_files = 1 " write tags file to tags config option, or global is it does not exist
 
 " nerdtree
-map <C-n> :NERDTreeToggle<CR>
+"map <C-n> :NERDTreeToggle<CR>
 
 " close if only window is nerdtree
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
