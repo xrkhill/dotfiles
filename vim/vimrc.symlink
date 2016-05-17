@@ -219,7 +219,7 @@ let g:markdown_enable_input_abbreviations = 0
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_reuse_window  = 'startify' " fix new window split issue
 let g:ctrlp_open_new_file = 'r' " open new file in current window
-
+let g:ctrlp_working_path_mode = 0 " disable fancy working path
 " YCM ON EVERYTHING
 "let g:ycm_filetype_blacklist = {}
 
