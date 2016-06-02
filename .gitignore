@@ -8,4 +8,6 @@ atom.symlink/themes
 
 git/gitconfig.symlink
 
+*.swo
+*.swp
 *.sublime-workspace

@@ -139,13 +139,15 @@ nmap <Leader>s :bn!<esc><cr>
 nmap <Leader>a :bp!<esc><cr>
 nmap <Leader>d :bd<esc><cr>
 nmap <Leader>f :b<cr>
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
 
 " Map ctrl+return to auto/smart indent
 imap <C-Return> <CR><CR><C-o>k<Tab>
 
 " lazy indent
-nmap <Tab> >>
-nmap <S-Tab> <<
+"nmap <Tab> >>
+"nmap <S-Tab> <<
 "imap <S-Tab> <Esc><<i
 
 " Map insert abnormals. Must be typed quickly!
@@ -220,6 +222,7 @@ let g:ctrlp_show_hidden = 1
 let g:ctrlp_reuse_window  = 'startify' " fix new window split issue
 let g:ctrlp_open_new_file = 'r' " open new file in current window
 let g:ctrlp_working_path_mode = 0 " disable fancy working path
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:20'
 " YCM ON EVERYTHING
 "let g:ycm_filetype_blacklist = {}
 
