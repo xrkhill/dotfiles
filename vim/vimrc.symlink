@@ -86,7 +86,7 @@ colors molokai
 " copy unnamed register to clipboard in macvim/gvim
 "set clipboard=unnamed
 
-"Invisible character colors
+" Invisible character colors
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
 
