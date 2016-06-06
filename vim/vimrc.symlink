@@ -24,6 +24,7 @@ Plugin 'bling/vim-airline'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 "Plugin 'gabrielelana/vim-markdown'
+"Plugin 'shime/vim-livedown'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-endwise'
 Plugin 'tyru/open-browser.vim'
@@ -91,10 +92,13 @@ highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
 
 " Pretty invisibles
-"set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
+"set listchars=tab:▸\ ,eol:¬
+
+" Highlight one or more trailing spaces
+" syntax match Error "\s\{2}$"
 
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
@@ -216,6 +220,10 @@ let g:markdown_enable_spell_checking = 0 " disable spellcheck
 let g:markdown_include_jekyll_support = 0
 let g:markdown_enable_mappings = 0
 let g:markdown_enable_input_abbreviations = 0
+
+" shime/vim-livedown
+let g:livedown_autorun = 0
+let g:livedown_open = 0
 
 " CtrlP
 let g:ctrlp_show_hidden = 1
