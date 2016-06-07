@@ -42,6 +42,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'mhinz/vim-startify'
 Plugin 'mileszs/ack.vim'
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'cespare/vim-toml'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
