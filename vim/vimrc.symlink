@@ -133,7 +133,7 @@ inoremap <C-a> <Esc>I
 
 " set normal C-o to save, for double tap
 nmap <C-o> :w<esc><esc>
-nmap <C-i> :q<cr>
+"nmap <C-i> :q<cr>
 
 " why was tab mapped to :q ?!?!
 nmap <Tab> <Nop>
@@ -144,8 +144,8 @@ nmap <Leader>s :bn!<esc><cr>
 nmap <Leader>a :bp!<esc><cr>
 nmap <Leader>d :bd<esc><cr>
 nmap <Leader>f :b<cr>
-nnoremap <Tab> :bnext<CR>
-nnoremap <S-Tab> :bprevious<CR>
+"nnoremap <Tab> :bnext<CR>
+"nnoremap <S-Tab> :bprevious<CR>
 
 " Map ctrl+return to auto/smart indent
 imap <C-Return> <CR><CR><C-o>k<Tab>
