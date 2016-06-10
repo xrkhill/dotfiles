@@ -247,7 +247,7 @@ nmap <Leader>rs :VimuxInterruptRunner<CR>
 "set tags=./tags
 
 " tagbar
-let g:tagbar_width=26                          " Default is 40, seems too wide
+"let g:tagbar_width=26                          " Default is 40, seems too wide
 noremap <Leader>y :TagbarToggle<cr>
 
 " easytags
