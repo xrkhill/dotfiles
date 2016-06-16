@@ -164,6 +164,9 @@ imap <C-Return> <CR><CR><C-o>k<Tab>
 vmap <TAB> >gv
 vmap <S-TAB> <gv
 
+" easier visual mode replace
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
 " select pasted text
 nmap gp `[v`]
 
