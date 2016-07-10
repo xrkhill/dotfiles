@@ -237,7 +237,7 @@ let g:ctrlp_working_path_mode = 0 " disable fancy working path
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:20'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.(git|hg|svn))|(tmp|node_modules|dist|vendor/bundle)$',
-  \ 'file': '\v\.(exe|so|dll|jpg|jpeg)$',
+  \ 'file': '\v\.(exe|so|dll|jpg|jpeg|png)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
 " YCM ON EVERYTHING
@@ -255,11 +255,12 @@ nmap <Leader>rs :VimuxInterruptRunner<CR>
 "set tags=./tags
 
 " tagbar
-"let g:tagbar_width=26                          " Default is 40, seems too wide
+"let g:tagbar_width=26 " Default is 40, seems too wide
 noremap <Leader>y :TagbarToggle<cr>
 
 " easytags
-"let g:easytags_dynamic_files = 1 " write tags file to tags config option, or global is it does not exist
+"let g:easytags_dynamic_files = 2 " write project-specific tags
+"let g:easytags_async = 1 " generate tags asynchronously
 
 " nerdtree
 "map <C-n> :NERDTreeToggle<CR>
