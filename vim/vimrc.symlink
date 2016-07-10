@@ -237,7 +237,7 @@ let g:ctrlp_working_path_mode = 0 " disable fancy working path
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:20'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.(git|hg|svn))|(tmp|node_modules|dist|vendor/bundle)$',
-  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'file': '\v\.(exe|so|dll|jpg|jpeg)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
 " YCM ON EVERYTHING
