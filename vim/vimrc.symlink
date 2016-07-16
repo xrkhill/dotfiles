@@ -25,7 +25,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 "Plugin 'gabrielelana/vim-markdown'
 "Plugin 'shime/vim-livedown'
-Plugin 'tpope/vim-rails'
+Plugin 'JamshedVesuna/vim-markdown-preview'
+"Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-endwise'
 Plugin 'tyru/open-browser.vim'
 "Plugin 'wincent/command-t'
@@ -276,3 +277,8 @@ let g:startify_custom_header = []
 let g:startify_relative_path = 1
 let g:startify_list_order = ['dir', 'files', 'bookmarks', 'sessions']
 let g:startify_change_to_dir = 1
+
+" vim-markdown-preview
+"let vim_markdown_preview_github=1 " use grip
+let vim_markdown_preview_hotkey='<C-m>'
+let vim_markdown_preview_browser='Google Chrome'
