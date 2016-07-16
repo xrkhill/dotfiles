@@ -279,6 +279,6 @@ let g:startify_list_order = ['dir', 'files', 'bookmarks', 'sessions']
 let g:startify_change_to_dir = 1
 
 " vim-markdown-preview
-"let vim_markdown_preview_github=1 " use grip
+"let vim_markdown_preview_github=1 " use grip disable to use markdown cli
 let vim_markdown_preview_hotkey='<C-m>'
 let vim_markdown_preview_browser='Google Chrome'
