@@ -286,4 +286,4 @@ let vim_markdown_preview_browser='Google Chrome'
 let vim_markdown_preview_temp_file=1 " rm file after render
 
 " buffergator
-nnoremap <silent> <Leader>b :BuffergatorToggle<CR> " toggle instead of open
+"nnoremap <silent> <Leader>b :BuffergatorToggle<CR> " toggle instead of open
