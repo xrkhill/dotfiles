@@ -292,3 +292,4 @@ let vim_markdown_preview_temp_file=1 " rm file after render
 " buffergator
 "nnoremap <silent> <Leader>b :BuffergatorToggle<CR> " toggle instead of open
 let g:buffergator_viewport_split_policy='T' " open viewport horz top
+let g:buffergator_autodismiss_on_select=1 " dismiss viewport on select
