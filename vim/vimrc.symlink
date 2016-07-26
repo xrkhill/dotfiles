@@ -293,4 +293,5 @@ let vim_markdown_preview_temp_file=1 " rm file after render
 "nnoremap <silent> <Leader>b :BuffergatorToggle<CR> " toggle instead of open
 let g:buffergator_viewport_split_policy='T' " open viewport horz top
 let g:buffergator_autodismiss_on_select=1 " dismiss viewport on select
-let g:buffergator_sort_regime=filepath " sort on full filepath
+let g:buffergator_sort_regime='filepath' " sort on full filepath
+let g:buffergator_autoupdate=1 " update viewport when bufferlist changes
