@@ -193,6 +193,9 @@ set exrc
 " search highlighting
 set hlsearch
 
+" Save search matches in separate file
+nnoremap <silent> <F4> :redir >>matches.tmp<CR>:g//<CR>:redir END<CR>:new matches.tmp<CR>
+
 " Syntax Highlighting on
 syntax on
 
@@ -219,6 +222,11 @@ let g:airline_powerline_fonts = 1
 
 " Airline: show all the time, not just on splits
 set laststatus=2
+let g:airline#extensions#wordcount#enabled = 0 " disable word count
+let g:airline_section_y = 0 " show nothing in encoding section
+let g:airline#extensions#tabline#buffer_nr_show = 0 " show buffer numbers
+let g:airline#extensions#tabline#fnametruncate = 0 " truncate non-active filenames
+let g:airline#extensions#tabline#fnamemod = ':p:t' " show only filename, see filename-modifiers for more
 
 " vim-markdown: no folding
 let g:vim_markdown_folding_disabled=1
@@ -293,5 +301,6 @@ let vim_markdown_preview_temp_file=1 " rm file after render
 "nnoremap <silent> <Leader>b :BuffergatorToggle<CR> " toggle instead of open
 let g:buffergator_viewport_split_policy='T' " open viewport horz top
 let g:buffergator_autodismiss_on_select=1 " dismiss viewport on select
+let g:buffergator_display_regime='filepath' " view full filepath
 let g:buffergator_sort_regime='filepath' " sort on full filepath
-let g:buffergator_autoupdate=1 " update viewport when bufferlist changes
+"let g:buffergator_autoupdate=1 " update viewport when bufferlist changes (buggy)
