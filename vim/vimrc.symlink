@@ -253,7 +253,11 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll|jpg|jpeg|png)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
-let g:ctrlp_bufname_mod = ':p:.' " show full path relative to extension
+let g:ctrlp_bufname_mod = ':.' " show full path relative to cwd
+let g:ctrlp_bufpath_mod = '' " nothing in the path section
+
+" list buffers nicely
+nmap <C-\> :CtrlPBuffer<cr>
 
 " YCM ON EVERYTHING
 "let g:ycm_filetype_blacklist = {}
