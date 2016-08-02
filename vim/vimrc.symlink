@@ -103,6 +103,10 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 " Highlight one or more trailing spaces
 " syntax match Error "\s\{2}$"
 
+" map leader to spacebar
+"let mapleader=" "
+map <Space> <Leader>
+
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
 
@@ -134,7 +138,7 @@ inoremap <C-e> <Esc>A
 inoremap <C-a> <Esc>I
 
 " set normal C-o to save, for double tap
-nmap <C-o> :w<esc><esc>
+nmap S :w<cr>
 "nmap <C-i> :q<cr>
 
 " why was tab mapped to :q ?!?!
@@ -226,6 +230,19 @@ let g:airline_section_y = 0 " show nothing in encoding section
 let g:airline#extensions#tabline#buffer_nr_show = 0 " show buffer numbers
 let g:airline#extensions#tabline#fnametruncate = 0 " truncate non-active filenames
 let g:airline#extensions#tabline#fnamemod = ':p:t' " show only filename, see filename-modifiers for more
+
+" Enable index select
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+
 
 " vim-markdown: no folding
 let g:vim_markdown_folding_disabled=1
