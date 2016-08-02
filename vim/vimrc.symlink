@@ -20,7 +20,8 @@ Plugin 'fatih/vim-go'
 "Plugin 'scrooloose/nerdtree'
 "Plugin 'tmhedberg/matchit'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'bling/vim-airline'
+"Plugin 'bling/vim-airline'
+Plugin 'fholgado/minibufexpl.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 "Plugin 'gabrielelana/vim-markdown'
@@ -140,10 +141,6 @@ inoremap <C-a> <Esc>I
 " set normal C-o to save, for double tap
 nmap S :w<cr>
 "nmap <C-i> :q<cr>
-
-" why was tab mapped to :q ?!?!
-nmap <Tab> <Nop>
-nmap <S-Tab> <Nop>
 
 " map buffer movement (normal)
 nmap <Leader>s :bn!<esc><cr>
