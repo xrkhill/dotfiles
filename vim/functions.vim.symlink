@@ -1,6 +1,3 @@
-" TODO
-
-
 " Highlight Repeating Lines
 function! HighlightRepeats() range
   let lineCounts = {}
@@ -21,3 +18,13 @@ function! HighlightRepeats() range
 endfunction
 
 command! -range=% HighlightRepeats <line1>,<line2>call HighlightRepeats()
+
+" Write all search matches to a file, open that file
+function! Matches()
+  redir! >/tmp/matches.tmp
+  g//
+  redir END
+  new /tmp/matches.tmp
+endfunction
+
+command! Matches <line1>,<line2>call Matches()
