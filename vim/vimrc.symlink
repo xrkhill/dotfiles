@@ -20,7 +20,7 @@ Plugin 'fatih/vim-go'
 "Plugin 'scrooloose/nerdtree'
 "Plugin 'tmhedberg/matchit'
 Plugin 'ctrlpvim/ctrlp.vim'
-"Plugin 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -215,7 +215,7 @@ nmap <C-n> :Vexplore<CR> " explorer in vertical split
 nmap <Leader>vv :Ack<cr>
 
 " Airline: show buffers when only one tab open
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 
 " Airline: use powerline glyphs for symbols
 let g:airline_powerline_fonts = 1
@@ -323,3 +323,12 @@ let g:buffergator_autodismiss_on_select=1 " dismiss viewport on select
 let g:buffergator_display_regime='filepath' " view full filepath
 let g:buffergator_sort_regime='filepath' " sort on full filepath
 "let g:buffergator_autoupdate=1 " update viewport when bufferlist changes (buggy)
+"
+" MiniBufExpl Colors
+hi MBENormal               ctermfg=251 guifg=#808080 guibg=fg
+hi MBEChanged              ctermfg=196 guifg=#CD5907 guibg=fg
+hi MBEVisibleNormal        ctermfg=037 guifg=#5DC2D6 guibg=fg
+hi MBEVisibleChanged       ctermfg=210 guifg=#F1266F guibg=fg
+hi MBEVisibleActiveNormal  ctermfg=046 guifg=#A6DB29 guibg=fg
+hi MBEVisibleActiveChanged ctermfg=214 guifg=#F1266F guibg=fg
+
