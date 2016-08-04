@@ -324,12 +324,19 @@ let g:buffergator_display_regime='filepath' " view full filepath
 let g:buffergator_sort_regime='filepath' " sort on full filepath
 "let g:buffergator_autoupdate=1 " update viewport when bufferlist changes (buggy)
 
-" MiniBufExpl Colors
+" MiniBufExplorer --------------------------------------------
+
+" Allow single clicks
+let g:miniBufExplUseSingleClick = 1
+" Hide buffer numbers
+let g:miniBufExplShowBufNumbers = 0
 hi MBENormal               ctermfg=069 guifg=#808080 guibg=fg
 hi MBEChanged              ctermfg=196 guifg=#CD5907 guibg=fg
 hi MBEVisibleNormal        ctermfg=037 guifg=#5DC2D6 guibg=fg
 hi MBEVisibleChanged       ctermfg=210 guifg=#F1266F guibg=fg
 hi MBEVisibleActiveNormal  ctermfg=046 guifg=#A6DB29 guibg=fg
 hi MBEVisibleActiveChanged ctermfg=214 guifg=#F1266F guibg=fg
+
+" MiniBufExplorer END ---------------------------------------
 
 source ~/.functions.vim
