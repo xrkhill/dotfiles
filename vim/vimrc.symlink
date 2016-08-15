@@ -122,7 +122,7 @@ map <Space> <Leader>
 nmap <leader>l :set list!<CR>
 
 " Classic backspace
-nnoremap <BS> X
+"nnoremap <BS> X
 
 " Paste mode toggle
 nnoremap <F2> :set invpaste paste?<CR>
