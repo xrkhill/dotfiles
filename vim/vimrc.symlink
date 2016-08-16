@@ -361,4 +361,4 @@ hi MBEVisibleActiveChanged ctermfg=214 guifg=#F1266F guibg=fg
 
 " MiniBufExplorer END ---------------------------------------
 
-source ~/.functions.vim
+source ~/.vimfunctions

@@ -28,3 +28,6 @@ function! Matches()
 endfunction
 
 command! Matches <line1>,<line2>call Matches()
+
+" Map :W to :w
+command! W w
