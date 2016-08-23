@@ -48,6 +48,8 @@ Plugin 'cespare/vim-toml'
 "Plugin 'jeetsukumaran/vim-buffergator'
 "Plugin 'ton/vim-bufsurf'
 Plugin 'qpkorr/vim-bufkill'
+Plugin 'vim-airline/vim-airline-themes'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -252,6 +254,14 @@ nmap <leader>6 <Plug>AirlineSelectTab6
 nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
+
+" Theme
+AirlineTheme wombat
+"AirlineTheme bubblegum
+"AirlineTheme tomorrow
+"AirlineTheme jellybeans
+"AirlineTheme luna
+"AirlineTheme hybrid
 
 
 " vim-markdown: no folding
