@@ -358,8 +358,9 @@ let g:miniBufExplShowBufNumbers = 0
 " Place MBE window above/left. Good if using splitbelow/splitright
 let g:miniBufExplBRSplit = 0
 
-" Show MBE even if only 1 buffer
-let g:miniBufExplBuffersNeeded = 1
+" Show MBE when the following num of buffers are present
+" 0 - skip eligible buffer checking
+let g:miniBufExplBuffersNeeded = 2
 
 " Better colors
 hi MBENormal               ctermfg=069 guifg=#808080 guibg=fg
