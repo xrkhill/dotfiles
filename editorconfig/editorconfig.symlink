@@ -18,7 +18,7 @@ indent_style = space
 indent_size = 2
 curly_bracket_next_line = false
 
-[*.{js,json}]
+[*.{js,json,template}]
 indent_style = space
 indent_size = 2
 curly_bracket_next_line = false

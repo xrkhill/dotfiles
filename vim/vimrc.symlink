@@ -61,18 +61,6 @@ filetype plugin indent on    " required
 set nonumber
 "highlight LineNr ctermfg=darkgrey
 
-set cindent
-set smartindent
-set autoindent
-
-" Don't use spaces for tabs
-set noexpandtab
-
-" Show tabs as 4 cols
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-
 " Recognize dash-separated values as words
 set iskeyword+=-
 
@@ -105,6 +93,30 @@ colors molokai
 " Invisible character colors
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
+
+" File Types & Indentation ---------------------------------------------------
+set cindent
+set smartindent
+set autoindent
+
+" Don't use spaces for tabs
+"set noexpandtab
+
+" Show tabs as 4 cols
+"set tabstop=4
+"set shiftwidth=4
+"set softtabstop=4
+
+" Set md file as markdown
+"autocmd BufNewFile,BufRead *.md set filetype=markdown
+
+" Treate .template as json
+autocmd BufNewFile,BufRead *.template set filetype=json
+
+" indentations
+autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+
+" File Types & Indentation END -----------------------------------------------
 
 " Pretty invisibles
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
@@ -214,12 +226,6 @@ nnoremap <silent> <F4> :redir >>matches.tmp<CR>:g//<CR>:redir END<CR>:new matche
 
 " Syntax Highlighting on
 syntax on
-
-" Set md file as markdown
-"autocmd BufNewFile,BufRead *.md set filetype=markdown
-
-" indentations
-autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 " netrw/Explorer
 let g:netrw_preview = 1 " preview file vertical split
