@@ -244,13 +244,19 @@ nmap <C-n> :Vexplore<CR> " explorer in vertical split
 " Ack: map
 nmap <Leader>vv :Ack<cr>
 
-" Airline: show buffers when only one tab open
+" Airline ----------------------------------------------------
+
+" enable/disable tabline
+"   if disabled, will show buffers when only one tab open
 let g:airline#extensions#tabline#enabled = 0
 
-" Airline: use powerline glyphs for symbols
+" enable/disable buffer line
+let g:airline#extensions#bufferline#enabled = 0
+
+" use powerline glyphs for symbols
 let g:airline_powerline_fonts = 1
 
-" Airline: show all the time, not just on splits
+" show all the time, not just on splits
 set laststatus=2
 let g:airline#extensions#wordcount#enabled = 0 " disable word count
 let g:airline_section_y = 0 " show nothing in encoding section
@@ -277,6 +283,8 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 "AirlineTheme jellybeans
 "AirlineTheme luna
 "AirlineTheme hybrid
+
+" Airline END ------------------------------------------------
 
 
 " vim-markdown: no folding
