@@ -20,8 +20,9 @@ Plugin 'fatih/vim-go'
 "Plugin 'scrooloose/nerdtree'
 "Plugin 'tmhedberg/matchit'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'gcmt/taboo.vim'
 Plugin 'bling/vim-airline'
-Plugin 'fholgado/minibufexpl.vim'
+"Plugin 'fholgado/minibufexpl.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 "Plugin 'gabrielelana/vim-markdown'
@@ -167,6 +168,7 @@ nmap S :w<cr>
 "nmap <C-i> :q<cr>
 
 " map buffer movement (normal)
+" <Leader>s requires release of <Leader> :(
 nmap <Leader>s :bn!<esc><cr>
 nmap <Leader>a :bp!<esc><cr>
 "nmap <Leader>s :BufSurfForward<cr>
@@ -176,6 +178,12 @@ nmap <Leader>d :BD<cr>
 nmap <Leader>f :b
 "nnoremap <Tab> :bnext<CR>
 "nnoremap <S-Tab> :bprevious<CR>
+
+" Tabs
+nmap = :tabn<cr>
+nmap - :tabp<cr>
+nmap _ :tabm -1<cr>
+nmap + :tabm +1<cr>
 
 " Map ctrl+return to auto/smart indent
 imap <C-Return> <CR><CR><C-o>k<Tab>
