@@ -184,6 +184,7 @@ nmap = :tabn<cr>
 nmap - :tabp<cr>
 nmap _ :tabm -1<cr>
 nmap + :tabm +1<cr>
+nmap ) :tabclose<cr>
 
 " Map ctrl+return to auto/smart indent
 imap <C-Return> <CR><CR><C-o>k<Tab>
