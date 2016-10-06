@@ -396,4 +396,8 @@ hi MBEVisibleActiveChanged ctermfg=214 guifg=#F1266F guibg=fg
 
 " MiniBufExplorer END ---------------------------------------
 
+" Tab colors
+hi TabLine     term=bold cterm=bold ctermfg=225 ctermbg=053
+hi TabLineFill term=bold cterm=bold ctermfg=225 ctermbg=053
+
 source ~/.vimfunctions
