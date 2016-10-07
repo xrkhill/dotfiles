@@ -244,6 +244,8 @@ nmap <C-n> :Vexplore<CR> " explorer in vertical split
 
 " Ack: map
 nmap <Leader>vv :Ack<cr>
+set grepprg=rg
+let g:ackprg='rg -n'
 
 " Airline ----------------------------------------------------
 
