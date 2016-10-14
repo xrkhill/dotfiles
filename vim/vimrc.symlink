@@ -251,8 +251,12 @@ let g:ackprg='rg --vimgrep'
 " lightline --------------------------------------------------
 let g:lightline = {
       \ 'colorscheme': 'wombat',
+      \ '_component': {
+      \   '_lineinfo': ' %3l:%-2v',
+      \ },
+      \ '_separator': { 'left': '', 'right': '' },
+      \ '_subseparator': { 'left': '', 'right': '' },
       \ }
-
 " lightline END ----------------------------------------------
 
 " enable/disable tabline
