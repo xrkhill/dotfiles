@@ -21,7 +21,8 @@ Plugin 'fatih/vim-go'
 "Plugin 'tmhedberg/matchit'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'gcmt/taboo.vim'
-Plugin 'bling/vim-airline'
+"Plugin 'bling/vim-airline'
+Plugin 'itchyny/lightline.vim'
 "Plugin 'fholgado/minibufexpl.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -49,7 +50,7 @@ Plugin 'cespare/vim-toml'
 "Plugin 'jeetsukumaran/vim-buffergator'
 "Plugin 'ton/vim-bufsurf'
 Plugin 'qpkorr/vim-bufkill'
-Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'vim-airline/vim-airline-themes'
 
 
 " All of your Plugins must be added before the following line
@@ -247,7 +248,12 @@ nmap <Leader>vv :Ack<cr>
 set grepprg=rg\ --vimgrep
 let g:ackprg='rg --vimgrep'
 
-" Airline ----------------------------------------------------
+" lightline --------------------------------------------------
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
+
+" lightline END ----------------------------------------------
 
 " enable/disable tabline
 "   if disabled, will show buffers when only one tab open
