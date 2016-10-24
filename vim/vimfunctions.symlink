@@ -33,3 +33,9 @@ command! Matches <line1>,<line2>call Matches()
 command! W w
 command! Q q
 command! Qa qa
+
+" Print UTC datetime
+command Date r!date -u \+"\%Y-\%m-\%dT\%H:\%M:\%SZ"
+
+" Print local datetime
+command DateLocal put =strftime('%FT%T%z')
