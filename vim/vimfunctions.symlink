@@ -40,7 +40,7 @@ function! UTCDate()
   normal kJ
 endfunction
 
-command Date call UTCDate()
+command! Date call UTCDate()
 
 " Print local datetime
-command DateLocal put =strftime('%FT%T%z')
+command! DateLocal put =strftime('%FT%T%z')
