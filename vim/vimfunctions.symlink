@@ -36,7 +36,7 @@ command! Qa qa
 
 " Print UTC datetime
 function! UTCDate()
-  r!date -u \+"\%Y-\%m-\%dT\%H:\%M:\%SZ"
+  r!date -u \+"\%Y-\%m-\%dT\%H:\%MZ"
   normal kJ
 endfunction
 
