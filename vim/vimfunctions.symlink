@@ -29,7 +29,7 @@ endfunction
 
 command! Matches <line1>,<line2>call Matches()
 
-" Map :W to :w
+" Map case typos
 command! W w
 command! Q q
 command! Qa qa

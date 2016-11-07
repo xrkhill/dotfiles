@@ -48,7 +48,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'cespare/vim-toml'
 "Plugin 'jeetsukumaran/vim-buffergator'
-"Plugin 'ton/vim-bufsurf'
+Plugin 'ton/vim-bufsurf'
 Plugin 'qpkorr/vim-bufkill'
 "Plugin 'vim-airline/vim-airline-themes'
 
@@ -164,16 +164,16 @@ ino <C-C> <Esc>
 inoremap <C-e> <Esc>A
 inoremap <C-a> <Esc>I
 
-" set normal C-o to save, for double tap
-nmap S :w<cr>
+" Easier saving
+"nmap S :w<cr>
 "nmap <C-i> :q<cr>
 
 " map buffer movement (normal)
 " <Leader>s requires release of <Leader> :(
-nmap <Leader>s :bn!<esc><cr>
-nmap <Leader>a :bp!<esc><cr>
-"nmap <Leader>s :BufSurfForward<cr>
-"nmap <Leader>a :BufSurfBack<cr>
+"nmap <Leader>s :bn!<esc><cr>
+"nmap <Leader>a :bp!<esc><cr>
+nmap <Leader>s :BufSurfForward<cr>
+nmap <Leader>a :BufSurfBack<cr>
 "nmap <Leader>d :bd<esc><cr>
 nmap <Leader>d :BD<cr>
 nmap <Leader>f :b
@@ -303,7 +303,7 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 " vim-markdown: no folding
 let g:vim_markdown_folding_disabled=1
 " fenced highlight aliases alias=orig
-let g:markdown_fenced_languages = ['bash=sh', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'rb=ruby', 'sass', 'xml']
+let g:markdown_fenced_languages = ['bash=sh', 'envrc=sh', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'rb=ruby', 'sass', 'xml']
 
 " gabrielelana/vim-markdown
 let g:markdown_enable_spell_checking = 0 " disable spellcheck
