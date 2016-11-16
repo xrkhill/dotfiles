@@ -220,8 +220,6 @@ if &term =~ '^screen'
     set ttymouse=xterm2
 endif
 
-
-
 " Smooth scroll
 "map <ScrollWheelUp> <C-Y>
 "map <ScrollWheelDown> <C-E>
@@ -231,6 +229,9 @@ set exrc
 
 " search highlighting
 set hlsearch
+
+" incremental search
+set incsearch
 
 " Save search matches in separate file
 nnoremap <silent> <F4> :redir >>matches.tmp<CR>:g//<CR>:redir END<CR>:new matches.tmp<CR>
@@ -408,9 +409,10 @@ hi MBEVisibleActiveChanged ctermfg=214 guifg=#F1266F guibg=fg
 
 " MiniBufExplorer END ---------------------------------------
 
-" Tab colors
+" Better Core Colors
 hi TabLine     term=bold cterm=bold ctermfg=225 ctermbg=053
 hi TabLineFill term=bold cterm=bold ctermfg=225 ctermbg=053
-hi TabLineSel term=bold cterm=bold ctermfg=053 ctermbg=225
+hi TabLineSel  term=bold cterm=bold ctermfg=053 ctermbg=225
+hi Visual term=underline ctermbg=238 guibg=#29373
 
 source ~/.vimfunctions
