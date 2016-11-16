@@ -304,7 +304,7 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 " vim-markdown: no folding
 let g:vim_markdown_folding_disabled=1
 " fenced highlight aliases alias=orig
-let g:markdown_fenced_languages = ['bash=sh', 'envrc=sh', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'rb=ruby', 'sass', 'xml']
+let g:markdown_fenced_languages = ['bash=sh', 'envrc=sh', 'css', 'erb=eruby', 'rb=ruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'rb=ruby', 'sass', 'xml']
 
 " gabrielelana/vim-markdown
 let g:markdown_enable_spell_checking = 0 " disable spellcheck
