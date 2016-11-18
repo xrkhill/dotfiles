@@ -231,7 +231,7 @@ set exrc
 set hlsearch
 
 " incremental search
-set incsearch
+"set incsearch
 
 " Save search matches in separate file
 nnoremap <silent> <F4> :redir >>matches.tmp<CR>:g//<CR>:redir END<CR>:new matches.tmp<CR>
