@@ -71,9 +71,11 @@ set -g @plugin 'tmux-plugins/tmux-sensible'
 # Other Plugins
 set -g @plugin "jlipps/tmux-safekill"
 
-#set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
 #set -g @plugin 'tmux-plugins/tmux-continuum'
 
+# Set desired resurrection processes
+set -g @resurrect-processes 'ssh psql mysql sqlite3 irb pry ~b guard'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
