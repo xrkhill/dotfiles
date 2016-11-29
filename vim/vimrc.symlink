@@ -300,11 +300,19 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 
 " Airline END ------------------------------------------------
 
+" plasticboy/vim-markdown ------------------------------------
+let g:vim_markdown_fenced_languages = ['bash=sh', 'envrc=sh', 'erb=eruby', 'rb=ruby', 'js=javascript', 'json=javascript', 'ruby', 'rb=ruby', 'sass', 'xml']
+" plasticboy/vim-markdown END --------------------------------
+
+
+" tpope/vim-markdown -----------------------------------------
 
 " vim-markdown: no folding
 let g:vim_markdown_folding_disabled=1
 " fenced highlight aliases alias=orig
 let g:markdown_fenced_languages = ['bash=sh', 'envrc=sh', 'css', 'erb=eruby', 'rb=ruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'rb=ruby', 'sass', 'xml']
+
+" tpope/vim-markdown END --------------------------------------
 
 " gabrielelana/vim-markdown
 let g:markdown_enable_spell_checking = 0 " disable spellcheck
@@ -415,4 +423,4 @@ hi TabLineFill term=bold cterm=bold ctermfg=225 ctermbg=053
 hi TabLineSel  term=bold cterm=bold ctermfg=053 ctermbg=225
 hi Visual term=underline ctermbg=238 guibg=#29373
 
-source ~/.vimfunctions
+source ~/.vimfunctions.vim
