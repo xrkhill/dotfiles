@@ -19,6 +19,7 @@ Plugin 'The-NERD-Commenter'
 Plugin 'fatih/vim-go'
 "Plugin 'scrooloose/nerdtree'
 "Plugin 'tmhedberg/matchit'
+Plugin 'vim-scripts/ruby-matchit'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'gcmt/taboo.vim'
 "Plugin 'bling/vim-airline'
@@ -337,6 +338,7 @@ let g:ctrlp_custom_ignore = {
   \ }
 let g:ctrlp_bufname_mod = ':.' " show full path relative to cwd
 let g:ctrlp_bufpath_mod = '' " nothing in the path section
+let g:ctrlp_switch_buffer = '' " don't switch to already displayed buffers
 
 " list buffers nicely
 nmap <C-\> :CtrlPBuffer<cr>
