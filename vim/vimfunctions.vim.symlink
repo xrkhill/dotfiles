@@ -54,4 +54,4 @@ function! SplitTwoByTwo()
 endfunction
 
 command! SplitTwoByTwo call SplitTwoByTwo()
-command! SplitFour call SplitTwoByTwo
+command! SplitFour call SplitTwoByTwo()
