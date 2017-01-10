@@ -49,7 +49,7 @@ function! UTCDate()
   "r!date -u \+"\%Y-\%m-\%dT\%H:\%MZ"
   "normal kJ
   let @z = ChompedSystem('date -u \+"%Y-%m-%dT%H:%MZ"')
-  normal "zP
+  normal "zp
 endfunction
 
 command! Date call UTCDate()
