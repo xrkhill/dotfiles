@@ -34,10 +34,22 @@ command! W w
 command! Q q
 command! Qa qa
 
+" rm newlines from string
+function! Chomp(string)
+    return substitute(a:string, '\n\+$', '', '')
+endfunction
+
+" Chomp system() call
+function! ChompedSystem( ... )
+    return substitute(call('system', a:000), '\n\+$', '', '')
+endfunction
+
 " Print UTC datetime
 function! UTCDate()
-  r!date -u \+"\%Y-\%m-\%dT\%H:\%MZ"
-  normal kJ
+  "r!date -u \+"\%Y-\%m-\%dT\%H:\%MZ"
+  "normal kJ
+  let @z = ChompedSystem('date -u \+"%Y-%m-%dT%H:%MZ"')
+  normal "zP
 endfunction
 
 command! Date call UTCDate()
@@ -55,3 +67,4 @@ endfunction
 
 command! SplitTwoByTwo call SplitTwoByTwo()
 command! SplitFour call SplitTwoByTwo()
+
