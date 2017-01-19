@@ -18,8 +18,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'The-NERD-Commenter'
 Plugin 'fatih/vim-go'
 "Plugin 'scrooloose/nerdtree'
-"Plugin 'tmhedberg/matchit'
-Plugin 'vim-scripts/ruby-matchit'
+Plugin 'tmhedberg/matchit'
+"Plugin 'vim-scripts/ruby-matchit'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'gcmt/taboo.vim'
 "Plugin 'bling/vim-airline'
@@ -292,7 +292,6 @@ nmap <leader>6 <Plug>AirlineSelectTab6
 nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
-
 
 " Airline Theme
 "AirlineTheme wombat
