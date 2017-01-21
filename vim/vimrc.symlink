@@ -75,7 +75,10 @@ set splitright
 set splitbelow
 
 set background=dark
-colors molokai
+colors apprentice
+"colors jellybeans
+"colors hybrid
+"colors molokai
 "colors blackboard
 "colors hemisu
 "colorscheme bubblegum
