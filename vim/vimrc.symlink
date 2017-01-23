@@ -74,31 +74,12 @@ set hidden
 set splitright
 set splitbelow
 
-set background=dark
-colors apprentice
-"colors jellybeans
-"colors hybrid
-"colors molokai
-"colors blackboard
-"colors hemisu
-"colorscheme bubblegum
-"colors noctu
-"colorscheme nefertiti
-"colorscheme pencil
-"colorscheme badwolf
-"" enable transparent term support
-"let g:solarized_termtrans=1
-"colorscheme solarized
 
 "make sure to escape the spaces in the name properly
 "set guifont=Source\ Code\ Pro\ for\ Powerline
 
 " copy unnamed register to clipboard in macvim/gvim
 "set clipboard=unnamed
-
-" Invisible character colors
-highlight NonText guifg=#4a4a59
-highlight SpecialKey guifg=#4a4a59
 
 " File Types & Indentation ---------------------------------------------------
 set cindent
@@ -424,10 +405,36 @@ hi MBEVisibleActiveChanged ctermfg=214 guifg=#F1266F guibg=fg
 
 " MiniBufExplorer END ---------------------------------------
 
-" Better Core Colors
+" Colors ----------------------------------------------------
+set background=dark
+colors apprentice
+"colors jellybeans
+"colors hybrid
+"colors molokai
+"colors blackboard
+"colors hemisu
+"colorscheme bubblegum
+"colors noctu
+"colorscheme nefertiti
+"colorscheme pencil
+"colorscheme badwolf
+"" enable transparent term support
+"let g:solarized_termtrans=1
+"colorscheme solarized
+
+" Cross-scheme colors
+"hi! link ColorColumn Tabline
+"hi! link ColorColumn TablineFill
 hi TabLine     term=bold cterm=bold ctermfg=225 ctermbg=053
 hi TabLineFill term=bold cterm=bold ctermfg=225 ctermbg=053
 hi TabLineSel  term=bold cterm=bold ctermfg=053 ctermbg=225
 hi Visual term=underline ctermbg=238 guibg=#29373
+
+" Invisible character colors
+hi NonText guifg=#4a4a59
+hi SpecialKey guifg=#4a4a59
+
+
+" Colors END -----------------------------------------------
 
 source ~/.vimfunctions.vim
