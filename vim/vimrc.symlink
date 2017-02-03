@@ -289,7 +289,7 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 " Airline END ------------------------------------------------
 
 " plasticboy/vim-markdown ------------------------------------
-let g:vim_markdown_fenced_languages = ['bash=sh', 'envrc=sh', 'erb=eruby', 'rb=ruby', 'js=javascript', 'json=javascript', 'ruby', 'rb=ruby', 'sass', 'xml']
+let g:vim_markdown_fenced_languages = ['bash=sh', 'envrc=sh', 'erb=eruby', 'rb=ruby', 'js=javascript', 'json=javascript', 'ruby', 'rb=ruby', 'sass', 'xml', 'ex=elixir']
 " plasticboy/vim-markdown END --------------------------------
 
 
@@ -297,8 +297,9 @@ let g:vim_markdown_fenced_languages = ['bash=sh', 'envrc=sh', 'erb=eruby', 'rb=r
 
 " vim-markdown: no folding
 let g:vim_markdown_folding_disabled=1
+
 " fenced highlight aliases alias=orig
-let g:markdown_fenced_languages = ['bash=sh', 'envrc=sh', 'css', 'erb=eruby', 'rb=ruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'rb=ruby', 'sass', 'xml']
+let g:markdown_fenced_languages = g:vim_markdown_fenced_languages
 
 " tpope/vim-markdown END --------------------------------------
 
