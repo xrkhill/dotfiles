@@ -101,6 +101,9 @@ set autoindent
 " Treate .template as json
 autocmd BufNewFile,BufRead *.template set filetype=json
 
+" Treate .envrc as sh
+autocmd BufNewFile,BufRead .envrc set filetype=sh
+
 " indentations
 autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
@@ -171,8 +174,8 @@ nmap = :tabn<cr>
 nmap - :tabp<cr>
 nmap _ :tabm -1<cr>
 nmap + :tabm +1<cr>
-nmap ( :tabclose<cr>
-nmap ) :tabnew<cr>
+"nmap ( :tabclose<cr>
+"nmap ) :tabnew<cr>
 
 " Map ctrl+return to auto/smart indent
 imap <C-Return> <CR><CR><C-o>k<Tab>
