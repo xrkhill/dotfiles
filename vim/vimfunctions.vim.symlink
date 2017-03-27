@@ -44,18 +44,25 @@ function! ChompedSystem( ... )
     return substitute(call('system', a:000), '\n\+$', '', '')
 endfunction
 
-" Print UTC datetime
+" Print UTC date
 function! UTCDate()
-  "r!date -u \+"\%Y-\%m-\%dT\%H:\%MZ"
-  "normal kJ
+  let @z = ChompedSystem('date -u \+"%Y-%m-%d"')
+  normal "zp
+endfunction
+
+" Print ISO-8601 UTC datetime
+function! UTCTime()
   let @z = ChompedSystem('date -u \+"%Y-%m-%dT%H:%MZ"')
   normal "zp
 endfunction
 
 command! Date call UTCDate()
+command! Time call UTCTime()
+command! UTCDate call UTCDate()
+command! UTCTime call UTCTime()
 
 " Print local datetime
-command! DateLocal put =strftime('%FT%T%z')
+command! LocalTime put =strftime('%FT%T%z')
 
 " Splits
 function! SplitTwoByTwo()
