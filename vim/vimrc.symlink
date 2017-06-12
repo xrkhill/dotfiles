@@ -304,6 +304,9 @@ let g:vim_markdown_fenced_languages = ['bash=sh', 'envrc=sh', 'erb=eruby', 'rb=r
 " vim-markdown: no folding
 let g:vim_markdown_folding_disabled=1
 
+" vim-markdown: don't indent new lines
+let g:vim_markdown_new_list_item_indent = 0
+
 " fenced highlight aliases alias=orig
 let g:markdown_fenced_languages = g:vim_markdown_fenced_languages
 
