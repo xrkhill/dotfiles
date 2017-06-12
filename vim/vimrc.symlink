@@ -108,6 +108,7 @@ autocmd BufNewFile,BufRead .envrc set filetype=sh
 " indentations
 autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype docker-compose setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype go setlocal tabstop=4 shiftwidth=4
 
 " File Types & Indentation END -----------------------------------------------
 
