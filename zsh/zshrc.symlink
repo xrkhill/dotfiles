@@ -60,3 +60,6 @@ bindkey -e
 
 # direnv
 eval "$(direnv hook zsh)"
+
+# prepend space allow
+setopt histignorespace
