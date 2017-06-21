@@ -110,6 +110,9 @@ autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype docker-compose setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype go setlocal tabstop=4 shiftwidth=4
 
+" better tab completion of filepaths
+set wildmode=longest,list
+
 " File Types & Indentation END -----------------------------------------------
 
 " Pretty invisibles
