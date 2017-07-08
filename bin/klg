@@ -1,0 +1,12 @@
+#!/bin/bash
+# Author: Dave Hulihan
+#
+# This script follows the logs of the first pod matching a grep expression.
+#
+# $ klg nginx
+#
+# You can also specify a container if your pod contains more than one.
+#
+# $ klg logging logstash
+POD=$(kubectl get pods | grep $1 | awk '{print $1}' | head -n 1)
+kubectl logs -f $POD $2
