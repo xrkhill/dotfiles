@@ -8,5 +8,6 @@
 # You can also specify a container if your pod contains more than one.
 #
 # $ klg logging logstash
-POD=$(kubectl get pods | grep $1 | awk '{print $1}' | head -n 1)
+POD=$(kubectl get pods | grep $1 | grep -v Terminating | awk '{print $1}' | head -n 1)
+echo "Selected pod ${POD}"
 kubectl logs -f $POD $2
