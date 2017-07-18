@@ -125,6 +125,9 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 " Highlight one or more trailing spaces
 " syntax match Error "\s\{2}$"
 
+" disable bells
+set noerrorbells visualbell t_vb=
+
 " map leader to spacebar
 "let mapleader=" "
 map <Space> <Leader>
