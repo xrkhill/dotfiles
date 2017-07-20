@@ -75,3 +75,14 @@ endfunction
 command! SplitTwoByTwo call SplitTwoByTwo()
 command! SplitFour call SplitTwoByTwo()
 
+" Print filename header in markdown
+function! MarkdownHeader()
+  let @a = "#"
+  put! a
+  put %
+  normal ggJ
+  s/\.md$//
+  jdd
+endfunction
+
+command! MarkdownHeader call MarkdownHeader()

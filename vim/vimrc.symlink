@@ -300,6 +300,9 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 
 " Airline END ------------------------------------------------
 
+" Markdown
+autocmd BufNewFile *.md MarkdownHeader
+
 " plasticboy/vim-markdown ------------------------------------
 let g:vim_markdown_fenced_languages = ['bash=sh', 'envrc=sh', 'erb=eruby', 'rb=ruby', 'js=javascript', 'json=javascript', 'ruby', 'rb=ruby', 'sass', 'xml', 'ex=elixir', 'yml=yaml']
 " plasticboy/vim-markdown END --------------------------------
