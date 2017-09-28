@@ -8,6 +8,12 @@
 # You can also specify a container if your pod contains more than one.
 #
 # $ klg logging logstash
-POD=$(kubectl get pods | grep $1 | grep -v Terminating | awk '{print $1}' | head -n 1)
+
+# Which column holds pod status
+STATUSCOL=3
+PODS=$(kubectl get pods | grep $1 | grep -v Terminating | sort --reverse -k$STATUSCOL| awk '{print $1}')
+POD=$(echo $PODS | head -n 1)
+echo "Available pods:"
+echo "${PODS}"
 echo "Selected pod ${POD}"
 kubectl logs -f $POD $2

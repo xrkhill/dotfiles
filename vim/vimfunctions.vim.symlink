@@ -72,7 +72,7 @@ function! SplitTwoByTwo()
   vsp
 endfunction
 
-command! SplitTwoByTwo call SplitTwoByTwo()
+"command! SplitTwoByTwo call SplitTwoByTwo()
 command! SplitFour call SplitTwoByTwo()
 
 " Print filename header in markdown

@@ -16,7 +16,14 @@ Plugin 'benmills/vimux'
 "Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-fugitive'
 Plugin 'The-NERD-Commenter'
+
+" Syntax
 Plugin 'fatih/vim-go'
+Plugin 'wannesm/wmgraphviz.vim'
+
+" Utility
+Plugin 'tpope/tpope-vim-abolish'
+
 "Plugin 'scrooloose/nerdtree'
 Plugin 'tmhedberg/matchit'
 "Plugin 'vim-scripts/ruby-matchit'
