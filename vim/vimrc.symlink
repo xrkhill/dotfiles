@@ -10,24 +10,29 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'Rename2'
+
+" System
 Plugin 'benmills/vimux'
-"Plugin 'tpope/vim-surround'
-"Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-fugitive'
-Plugin 'The-NERD-Commenter'
 
 " Syntax
+"Plugin 'tpope/vim-surround'
+"Plugin 'tpope/vim-repeat'
 Plugin 'fatih/vim-go'
+Plugin 'The-NERD-Commenter'
 Plugin 'wannesm/wmgraphviz.vim'
 
 " Utility
 Plugin 'tpope/tpope-vim-abolish'
+Plugin 'Rename2'
+
 
 "Plugin 'scrooloose/nerdtree'
 Plugin 'tmhedberg/matchit'
 "Plugin 'vim-scripts/ruby-matchit'
 Plugin 'ctrlpvim/ctrlp.vim'
+
+" Layout
 Plugin 'gcmt/taboo.vim'
 "Plugin 'bling/vim-airline'
 Plugin 'itchyny/lightline.vim'
@@ -257,6 +262,13 @@ let g:ackprg='rg --vimgrep'
 " lightline --------------------------------------------------
 let g:lightline = {
       \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified', 'gitbranch' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
       \ '_component': {
       \   '_lineinfo': ' %3l:%-2v',
       \ },
