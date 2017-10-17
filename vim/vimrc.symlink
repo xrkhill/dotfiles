@@ -327,6 +327,9 @@ let g:vim_markdown_fenced_languages = ['bash=sh', 'envrc=sh', 'erb=eruby', 'rb=r
 " plasticboy/vim-markdown END --------------------------------
 
 
+" groovy
+au BufNewFile,BufRead Jenkinsfile setf groovy
+
 " tpope/vim-markdown -----------------------------------------
 
 " vim-markdown: no folding
