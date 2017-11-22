@@ -13,7 +13,10 @@ Plugin 'gmarik/Vundle.vim'
 
 " System
 Plugin 'benmills/vimux'
+
+" Version Control
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 
 " Syntax
 "Plugin 'tpope/vim-surround'
