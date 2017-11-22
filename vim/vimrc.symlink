@@ -24,6 +24,9 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'fatih/vim-go'
 Plugin 'The-NERD-Commenter'
 Plugin 'wannesm/wmgraphviz.vim'
+Plugin 'hashivim/vim-terraform'
+Plugin 'tpope/vim-cucumber'
+Plugin 'vim-syntastic/syntastic'
 
 " Utility
 Plugin 'tpope/tpope-vim-abolish'
@@ -121,6 +124,7 @@ autocmd BufNewFile,BufRead *.template set filetype=json
 autocmd BufNewFile,BufRead .envrc set filetype=sh
 
 " indentations
+autocmd Filetype terraform setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype docker-compose setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype go setlocal tabstop=4 shiftwidth=4
@@ -426,6 +430,20 @@ let g:buffergator_sort_regime='filepath' " sort on full filepath
 "let g:buffergator_autoupdate=1 " update viewport when bufferlist changes (buggy)
 
 " MiniBufExplorer --------------------------------------------
+
+" syntastic START
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+let g:syntastic_go_checkers = [ 'gofmt', 'golint' ]
+" syntastic END
 
 " Allow single clicks
 let g:miniBufExplUseSingleClick = 1
