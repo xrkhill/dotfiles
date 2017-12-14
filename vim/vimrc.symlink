@@ -375,6 +375,13 @@ let g:ctrlp_bufname_mod = ':.' " show full path relative to cwd
 let g:ctrlp_bufpath_mod = '' " nothing in the path section
 let g:ctrlp_switch_buffer = '' " don't switch to already displayed buffers
 
+" set custom cmd for ignoring things in gitignore (when in project root)
+"let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+" ignore everything in gitignore (regardless of project depth)
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+
+
 " list buffers nicely
 nmap <C-\> :CtrlPBuffer<cr>
 
