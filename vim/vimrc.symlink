@@ -12,7 +12,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " System
-Plugin 'benmills/vimux'
+"Plugin 'benmills/vimux'
 
 " Version Control
 Plugin 'tpope/vim-fugitive'
@@ -23,10 +23,23 @@ Plugin 'airblade/vim-gitgutter'
 "Plugin 'tpope/vim-repeat'
 Plugin 'fatih/vim-go'
 Plugin 'The-NERD-Commenter'
-Plugin 'wannesm/wmgraphviz.vim'
+"Plugin 'wannesm/wmgraphviz.vim'
 Plugin 'hashivim/vim-terraform'
 Plugin 'tpope/vim-cucumber'
-Plugin 'vim-syntastic/syntastic'
+Plugin 'elubow/cql-vim'
+Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'cespare/vim-toml'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'elixir-lang/vim-elixir'
+"Plugin 'tpope/vim-rails'
+"Plugin 'gabrielelana/vim-markdown'
+"Plugin 'shime/vim-livedown'
+"Plugin 'JamshedVesuna/vim-markdown-preview'
+
+" Lint
+"Plugin 'vim-syntastic/syntastic'
+Plugin 'w0rp/ale'
+Plugin 'maximbaz/lightline-ale'
 
 " Utility
 Plugin 'tpope/tpope-vim-abolish'
@@ -38,41 +51,36 @@ Plugin 'tmhedberg/matchit'
 "Plugin 'vim-scripts/ruby-matchit'
 Plugin 'ctrlpvim/ctrlp.vim'
 
-" Layout
+
+" Colors
+Plugin 'flazz/vim-colorschemes'
+Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
+
+" Files & Buffers
+"Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'ton/vim-bufsurf'
+Plugin 'qpkorr/vim-bufkill'
 Plugin 'gcmt/taboo.vim'
+Plugin 'danro/rename.vim'
+"Plugin 'fholgado/minibufexpl.vim'
+
+" Layout
 "Plugin 'bling/vim-airline'
 Plugin 'itchyny/lightline.vim'
-"Plugin 'fholgado/minibufexpl.vim'
 Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'elixir-lang/vim-elixir'
-"Plugin 'gabrielelana/vim-markdown'
-"Plugin 'shime/vim-livedown'
-"Plugin 'JamshedVesuna/vim-markdown-preview'
-"Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-endwise'
 Plugin 'tyru/open-browser.vim'
 "Plugin 'wincent/command-t'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
-Plugin 'danro/rename.vim'
 "Plugin 'jiangmiao/auto-pairs'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'vim-scripts/EasyGrep'
-Plugin 'elubow/cql-vim'
 Plugin 'editorconfig/editorconfig-vim.git'
 "Plugin 'xolox/vim-misc'
 "Plugin 'xolox/vim-easytags'
 Plugin 'majutsushi/tagbar'
 Plugin 'mhinz/vim-startify'
 Plugin 'mileszs/ack.vim'
-Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'cespare/vim-toml'
-"Plugin 'jeetsukumaran/vim-buffergator'
-Plugin 'ton/vim-bufsurf'
-Plugin 'qpkorr/vim-bufkill'
 "Plugin 'vim-airline/vim-airline-themes'
-
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -337,6 +345,13 @@ let g:vim_markdown_fenced_languages = ['bash=sh', 'envrc=sh', 'erb=eruby', 'rb=r
 " groovy
 au BufNewFile,BufRead Jenkinsfile setf groovy
 
+" fatih/vim-go ----------------------------------------------
+
+" disable fmt on autosave, use linter
+let g:go_fmt_autosave = 0
+
+" fatih/vim-go END ------------------------------------------
+
 " tpope/vim-markdown -----------------------------------------
 
 " vim-markdown: no folding
@@ -438,7 +453,7 @@ let g:buffergator_sort_regime='filepath' " sort on full filepath
 
 " MiniBufExplorer --------------------------------------------
 
-" syntastic START
+" syntastic START --------------------------------------------
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
@@ -450,7 +465,28 @@ let g:syntastic_check_on_wq = 0
 
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 let g:syntastic_go_checkers = [ 'gofmt', 'golint' ]
-" syntastic END
+" syntastic END ---------------------------------------------
+
+" ale START -------------------------------------------------
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+" lightline-ale
+let g:lightline.component_expand = {
+      \  'linter_warnings': 'lightline#ale#warnings',
+      \  'linter_errors': 'lightline#ale#errors',
+      \  'linter_ok': 'lightline#ale#ok',
+      \ }
+
+let g:lightline.component_type = {
+      \     'linter_warnings': 'warning',
+      \     'linter_errors': 'error',
+      \ }
+
+let g:lightline.active = { 'right': [[ 'linter_errors', 'linter_warnings', 'linter_ok' ]] }
+
+" ale END ---------------------------------------------------
 
 " Allow single clicks
 let g:miniBufExplUseSingleClick = 1
