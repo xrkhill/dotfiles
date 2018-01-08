@@ -486,7 +486,10 @@ let g:lightline.component_type = {
       \     'linter_errors': 'error',
       \ }
 
-let g:lightline.active = { 'right': [[ 'linter_errors', 'linter_warnings', 'linter_ok' ]] }
+let g:lightline.active = { 'right': [ ['lineinfo'],
+		    \            [ 'percent' ],
+		    \            [ 'fileformat', 'fileencoding', 'filetype' ],
+		    \            ['ruler', 'linter_errors', 'linter_warnings', 'linter_ok' ]] }
 
 " ale END ---------------------------------------------------
 
