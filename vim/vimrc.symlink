@@ -31,6 +31,7 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'cespare/vim-toml'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'tpope/vim-endwise'
 "Plugin 'tpope/vim-rails'
 "Plugin 'gabrielelana/vim-markdown'
 "Plugin 'shime/vim-livedown'
@@ -43,6 +44,7 @@ Plugin 'maximbaz/lightline-ale'
 
 " Utility
 Plugin 'tpope/tpope-vim-abolish'
+Plugin 'mileszs/ack.vim'
 Plugin 'Rename2'
 
 
@@ -68,7 +70,6 @@ Plugin 'danro/rename.vim'
 "Plugin 'bling/vim-airline'
 Plugin 'itchyny/lightline.vim'
 Plugin 'godlygeek/tabular'
-Plugin 'tpope/vim-endwise'
 Plugin 'tyru/open-browser.vim'
 "Plugin 'wincent/command-t'
 "Plugin 'jiangmiao/auto-pairs'
@@ -79,7 +80,6 @@ Plugin 'editorconfig/editorconfig-vim.git'
 "Plugin 'xolox/vim-easytags'
 Plugin 'majutsushi/tagbar'
 Plugin 'mhinz/vim-startify'
-Plugin 'mileszs/ack.vim'
 "Plugin 'vim-airline/vim-airline-themes'
 
 " All of your Plugins must be added before the following line
@@ -332,14 +332,19 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 "AirlineTheme luna
 "AirlineTheme hybrid
 
-" Airline END ------------------------------------------------
+" Airline END -----------------------------------------------
 
 " Markdown
 autocmd BufNewFile *.md MarkdownHeader
 
-" plasticboy/vim-markdown ------------------------------------
+" tpope/vim-markdown ----------------------------------------
+let g:markdown_gfm_languages = ["ruby", "erb=eruby"]
+
+" tpope/vim-markdown END ------------------------------------
+
+" plasticboy/vim-markdown -----------------------------------
 let g:vim_markdown_fenced_languages = ['bash=sh', 'envrc=sh', 'erb=eruby', 'rb=ruby', 'js=javascript', 'json=javascript', 'ruby', 'rb=ruby', 'sass', 'xml', 'ex=elixir', 'yml=yaml']
-" plasticboy/vim-markdown END --------------------------------
+" plasticboy/vim-markdown END -------------------------------
 
 
 " groovy
@@ -352,7 +357,7 @@ let g:go_fmt_autosave = 0
 
 " fatih/vim-go END ------------------------------------------
 
-" tpope/vim-markdown -----------------------------------------
+" tpope/vim-markdown ----------------------------------------
 
 " vim-markdown: no folding
 let g:vim_markdown_folding_disabled=1
