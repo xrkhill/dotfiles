@@ -71,9 +71,16 @@ directory_name() {
   echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
 }
 
-export PROMPT=$'\n$(rb_prompt)in $(directory_name) $(git_dirty)$(need_push)\n› '
+# Date Stamp
+datestamp() {
+  echo "%{$fg_bold[grey]%}%D{%Y-%m-%f} %D{%H:%M:%S.%. %Z}%{$reset_color%}"
+}
+
+
 set_prompt () {
-  export RPROMPT="%{$fg_bold[grey]%}%D{%Y-%m-%f} %D{%H:%M:%S.%. %Z}%{$reset_color%}"
+	export PROMPT=$'\n$(datestamp)\n$(rb_prompt)in $(directory_name) $(git_dirty)$(need_push)\n› '
+	#export RPROMPT=""
+
 }
 
 precmd() {
