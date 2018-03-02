@@ -82,6 +82,9 @@ Plugin 'majutsushi/tagbar'
 Plugin 'mhinz/vim-startify'
 "Plugin 'vim-airline/vim-airline-themes'
 
+" Build
+Plugin 'tpope/vim-dispatch'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -343,6 +346,12 @@ autocmd BufNewFile *.md MarkdownHeader
 let g:markdown_gfm_languages = ["ruby", "erb=eruby"]
 
 " tpope/vim-markdown END ------------------------------------
+
+" tpope/vim-dispatch ----------------------------------------
+
+" Open md files with system tool
+autocmd FileType markdown let b:dispatch = "open '%'"
+" tpope/vim-dispatch END ------------------------------------
 
 " plasticboy/vim-markdown -----------------------------------
 let g:vim_markdown_fenced_languages = ['bash=sh', 'envrc=sh', 'erb=eruby', 'rb=ruby', 'js=javascript', 'json=javascript', 'ruby', 'rb=ruby', 'sass', 'xml', 'ex=elixir', 'yml=yaml']
