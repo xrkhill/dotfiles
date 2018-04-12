@@ -47,13 +47,13 @@ endfunction
 " Print UTC date
 function! UTCDate()
   let @z = ChompedSystem('date -u \+"%Y-%m-%d"')
-  normal "zp
+  normal! "zp
 endfunction
 
 " Print ISO-8601 UTC datetime
 function! UTCTime()
   let @z = ChompedSystem('date -u \+"%Y-%m-%dT%H:%MZ"')
-  normal "zp
+  normal! "zp
 endfunction
 
 command! Date call UTCDate()
@@ -77,12 +77,12 @@ command! SplitFour call SplitTwoByTwo()
 
 " Print filename header in markdown
 function! MarkdownHeader()
-  let @a = "#"
+  let @a = '#'
   put! a
   put %
-  normal ggJ
+  normal! ggJ
   s/\.md$//
-  normal jdd
+  normal! jdd
 endfunction
 
 command! MarkdownHeader call MarkdownHeader()
