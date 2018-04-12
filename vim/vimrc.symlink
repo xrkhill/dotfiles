@@ -14,9 +14,20 @@ Plugin 'gmarik/Vundle.vim'
 " System
 "Plugin 'benmills/vimux'
 
+" Startup
+Plugin 'mhinz/vim-startify'
+
 " Version Control
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
+
+" General Syntax
+"Plugin 'jiangmiao/auto-pairs'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-surround'
+"Plugin 'tpope/vim-repeat'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'The-NERD-Commenter'
 
 " Language-specific
 Plugin 'fatih/vim-go'
@@ -33,18 +44,12 @@ Plugin 'plasticboy/vim-markdown'
 "Plugin 'gabrielelana/vim-markdown'
 "Plugin 'shime/vim-livedown'
 "Plugin 'JamshedVesuna/vim-markdown-preview'
-
-" Syntax
-Plugin 'tpope/vim-endwise'
-"Plugin 'tpope/vim-surround'
-"Plugin 'tpope/vim-repeat'
-Plugin 'The-NERD-Commenter'
 " Plugin 'amiorin/vim-fenced-code-blocks' " does not support indentation
-Plugin 'rhysd/vim-gfm-syntax'
+" Plugin 'rhysd/vim-gfm-syntax' " cute but not needed
 
 " Lint
-"Plugin 'vim-syntastic/syntastic'
 Plugin 'w0rp/ale'
+"Plugin 'vim-syntastic/syntastic'
 Plugin 'maximbaz/lightline-ale'
 
 " Utility
@@ -61,6 +66,7 @@ Plugin 'mtth/scratch.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 Plugin 'fenetikm/falcon'
+"Plugin 'vim-airline/vim-airline-themes'
 
 " Files & Buffers
 "Plugin 'jeetsukumaran/vim-buffergator'
@@ -76,15 +82,11 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'tyru/open-browser.vim'
 "Plugin 'wincent/command-t'
-"Plugin 'jiangmiao/auto-pairs'
-"Plugin 'Valloric/YouCompleteMe'
 "Plugin 'vim-scripts/EasyGrep'
 Plugin 'editorconfig/editorconfig-vim.git'
 "Plugin 'xolox/vim-misc'
 "Plugin 'xolox/vim-easytags'
 Plugin 'majutsushi/tagbar'
-Plugin 'mhinz/vim-startify'
-"Plugin 'vim-airline/vim-airline-themes'
 
 " Build
 Plugin 'tpope/vim-dispatch'
@@ -360,6 +362,19 @@ autocmd FileType markdown let b:dispatch = "open '%'"
 " plasticboy/vim-markdown -----------------------------------
 let g:vim_markdown_fenced_languages = ['bash=sh', 'envrc=sh', 'erb=eruby', 'rb=ruby', 'js=javascript', 'json=javascript', 'ruby', 'rb=ruby', 'sass', 'xml', 'ex=elixir', 'yml=yaml']
 " plasticboy/vim-markdown END -------------------------------
+
+" jiangmiao/auto-pairs --------------------------------------
+
+" turn off indenter. Does not play nicely with fenced markdown blocks
+let g:AutoPairsMapCR = 0
+
+" turn this off in most cases
+"let g:AutoPairs = {}
+
+" backticks in markdown
+"autocmd FileType markdown let g:AutoPairs = { '`':'`'}
+" jiangmiao/auto-pairs END ----------------------------------
+
 
 
 " groovy
