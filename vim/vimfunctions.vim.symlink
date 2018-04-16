@@ -82,7 +82,7 @@ function! MarkdownHeader()
   put %
   normal! ggJ
   s/\.md$//
-  normal! jdd
+  "normal! jdd
 endfunction
 
 command! MarkdownHeader call MarkdownHeader()
