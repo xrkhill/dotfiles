@@ -38,6 +38,7 @@ Plugin 'elubow/cql-vim'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'cespare/vim-toml'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'jparise/vim-graphql'
 "Plugin 'wannesm/wmgraphviz.vim'
 "Plugin 'elixir-lang/vim-elixir'
 "Plugin 'tpope/vim-rails'
@@ -357,7 +358,7 @@ autocmd FileType markdown let b:dispatch = "open '%'"
 " tpope/vim-dispatch END ------------------------------------
 
 " plasticboy/vim-markdown -----------------------------------
-let g:vim_markdown_fenced_languages = ['bash=sh', 'envrc=sh', 'erb=eruby', 'rb=ruby', 'js=javascript', 'json=javascript', 'ruby', 'rb=ruby', 'sass', 'xml', 'ex=elixir', 'yml=yaml']
+let g:vim_markdown_fenced_languages = ['bash=sh', 'envrc=sh', 'erb=eruby', 'rb=ruby', 'js=javascript', 'json=javascript', 'ruby', 'rb=ruby', 'sass', 'xml', 'ex=elixir', 'yml=yaml', 'gql=graphql']
 " plasticboy/vim-markdown END -------------------------------
 
 " jiangmiao/auto-pairs --------------------------------------
