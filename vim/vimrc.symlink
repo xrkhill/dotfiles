@@ -373,7 +373,10 @@ let g:AutoPairsMapCR = 0
 "autocmd FileType markdown let g:AutoPairs = { '`':'`'}
 " jiangmiao/auto-pairs END ----------------------------------
 
-
+" git-gutter -------------------------------------------------
+" Don't touch sign column colors
+let g:gitgutter_override_sign_column_highlight = 0
+" git-gutter END ---------------------------------------------
 
 " groovy
 au BufNewFile,BufRead Jenkinsfile setf groovy
@@ -551,7 +554,6 @@ let g:ale_fixers = {
 \   'go': ['gofmt', 'goimports'],
 \}
 
-
 " Set this setting in vimrc if you want to fix files automatically on save.
 " This is off by default.
 let g:ale_fix_on_save = 1
@@ -597,6 +599,10 @@ colors apprentice
 "" enable transparent term support
 "let g:solarized_termtrans=1
 "colorscheme solarized
+
+" Current-scheme colors
+hi! link SignColumn Normal
+hi! link LineNr Comment
 
 " Cross-scheme colors
 "hi! link ColorColumn Tabline
