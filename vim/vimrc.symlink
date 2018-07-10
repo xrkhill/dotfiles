@@ -490,7 +490,7 @@ noremap <Leader>y :TagbarToggle<cr>
 let g:startify_custom_header = []
 let g:startify_relative_path = 1
 let g:startify_list_order = ['dir', 'files', 'bookmarks', 'sessions']
-let g:startify_change_to_dir = 1
+let g:startify_change_to_dir = 0
 
 " vim-markdown-preview
 "let vim_markdown_preview_github=1 " use grip disable to use markdown cli
