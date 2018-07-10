@@ -46,20 +46,12 @@ done
 unset config_files
 
 export EDITOR=$(which vim)
-export NVM_DIR="/Users/dave/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # shift-tab reverse complete
 bindkey '^[[Z' reverse-menu-complete
 
 # allow C-a | C-e in tmux
 bindkey -e
-
-# Activate fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# direnv
-eval "$(direnv hook zsh)"
 
 # prepend space allow
 setopt histignorespace
