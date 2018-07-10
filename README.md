@@ -1,4 +1,4 @@
-# dave does dotfiles
+# dhulihan does dotfiles
 
 Contains helpful tools, aliases, and configuration.
 
