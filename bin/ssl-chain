@@ -15,6 +15,10 @@ if ! openssl x509 -in "${chain_pem}" -noout 2>/dev/null ; then
     exit 1
 fi
 
+openssl x509 -in "${chain_pem}" -noout -text
+
+echo
+
 awk -F'\n' '
         BEGIN {
             showcert = "openssl x509 -noout -subject -issuer"
