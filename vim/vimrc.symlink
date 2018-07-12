@@ -62,7 +62,7 @@ Plugin 'Rename2'
 Plugin 'tmhedberg/matchit'
 "Plugin 'vim-scripts/ruby-matchit'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'mtth/scratch.vim'
+"Plugin 'mtth/scratch.vim'
 
 " Colors
 Plugin 'flazz/vim-colorschemes'
