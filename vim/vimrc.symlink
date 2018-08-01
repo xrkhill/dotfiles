@@ -28,7 +28,7 @@ Plugin 'tpope/vim-endwise'
 "Plugin 'tpope/vim-repeat'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'The-NERD-Commenter'
-Plugin 'ludovicchabant/vim-gutentags'
+"Plugin 'ludovicchabant/vim-gutentags' " blocking too much
 
 " Language-specific
 Plugin 'fatih/vim-go'
@@ -63,6 +63,7 @@ Plugin 'tmhedberg/matchit'
 "Plugin 'vim-scripts/ruby-matchit'
 Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'mtth/scratch.vim'
+"Plugin 'vim-scripts/SearchComplete'
 
 " Colors
 Plugin 'flazz/vim-colorschemes'
@@ -303,11 +304,10 @@ let g:lightline = {
 " lightline END ----------------------------------------------
 
 " gutentags -------------------------------------------------
-augroup MyGutentagsStatusLineRefresher
-    autocmd!
-    autocmd User GutentagsUpdating call lightline#update()
-    autocmd User GutentagsUpdated call lightline#update()
-augroup END
+"autocmd User GutentagsUpdating unsilent echo "Gutentagging..."
+"autocmd User GutentagsUpdated unsilent echo "Gutentagged!"
+"autocmd User GutentagsUpdating call lightline#update()
+"autocmd User GutentagsUpdated call lightline#update()
 " gutentags END ---------------------------------------------
 
 " Airline ----------------------------------------------------
