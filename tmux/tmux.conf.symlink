@@ -12,7 +12,7 @@ bind K confirm kill-server
 
 # copy-mode
 bind -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "pbcopy"
-bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "pbcopy"
+bind -T copy-mode-vi y send-keys -X copy-pipe "pbcopy"
 
 # Start windows and panes at 1, not 0
 set -g base-index 1
