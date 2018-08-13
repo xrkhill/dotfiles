@@ -48,6 +48,7 @@ Plugin 'jparise/vim-graphql'
 "Plugin 'JamshedVesuna/vim-markdown-preview'
 " Plugin 'amiorin/vim-fenced-code-blocks' " does not support indentation
 " Plugin 'rhysd/vim-gfm-syntax' " cute but not needed
+Plugin 'chrisbra/csv.vim'
 
 " Lint
 Plugin 'w0rp/ale'
@@ -367,7 +368,7 @@ autocmd FileType markdown let b:dispatch = "open '%'"
 " tpope/vim-dispatch END ------------------------------------
 
 " plasticboy/vim-markdown -----------------------------------
-let g:vim_markdown_fenced_languages = ['bash=sh', 'envrc=sh', 'erb=eruby', 'rb=ruby', 'js=javascript', 'json=javascript', 'ruby', 'rb=ruby', 'sass', 'xml', 'ex=elixir', 'yml=yaml', 'gql=graphql']
+let g:vim_markdown_fenced_languages = ['bash=sh', 'envrc=sh', 'erb=eruby', 'rb=ruby', 'js=javascript', 'json=javascript', 'ruby', 'rb=ruby', 'sass', 'xml', 'ex=elixir', 'yml=yaml', 'gql=graphql', 'py=python']
 " plasticboy/vim-markdown END -------------------------------
 
 " jiangmiao/auto-pairs --------------------------------------
@@ -561,6 +562,7 @@ let g:lightline.active = { 'right': [ ['lineinfo'],
 " fixers
 let g:ale_fixers = {
 \   'go': ['gofmt', 'goimports'],
+\   'python': ['yapf', 'isort'],
 \}
 
 " Set this setting in vimrc if you want to fix files automatically on save.
