@@ -29,6 +29,7 @@ Plugin 'tpope/vim-endwise'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'The-NERD-Commenter'
 "Plugin 'ludovicchabant/vim-gutentags' " blocking too much
+Plugin 'vitalk/vim-shebang'
 
 " Language-specific
 Plugin 'fatih/vim-go'
