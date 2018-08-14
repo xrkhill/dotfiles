@@ -563,7 +563,7 @@ let g:lightline.active = { 'right': [ ['lineinfo'],
 " fixers
 let g:ale_fixers = {
 \   'go': ['gofmt', 'goimports'],
-\   'python': ['yapf', 'isort'],
+\   'python': ['isort', 'black'],
 \}
 
 " Set this setting in vimrc if you want to fix files automatically on save.
