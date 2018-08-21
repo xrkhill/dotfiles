@@ -23,14 +23,17 @@ bind -n S-Right next-window
 bind -n S-Left previous-window
 
 # ctrl-shift arrows to move window
-bind-key -n C-S-Left swap-window -t -1
-bind-key -n C-S-Right swap-window -t +1
+bind -n C-S-Left swap-window -t -1
+bind -n C-S-Right swap-window -t +1
 
 # try to maintain pwd (warning: does not work in sudo/su sessions)
 # Saner splitting.
 bind '"' split-window -c "#{pane_current_path}" -v
 bind '%' split-window -c "#{pane_current_path}" -h
 bind c new-window -c "#{pane_current_path}"
+
+# Unbind C-r, which is conflicting with fzf
+#bind -T root C-r send fzf-tmux C-m
 
 # Fix long name issue with tmuxinator
 #set -g automatic-rename off
