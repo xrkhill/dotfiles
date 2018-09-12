@@ -560,10 +560,16 @@ let g:lightline.active = { 'right': [ ['lineinfo'],
 " resolve fight between vim-go and ale
 "let g:go_fmt_fail_silently = 1
 
+" this isn't an actual ale var, this is just a placeholder for stuff i use
+" sometimes
+let g:disabled_ale_fixers = {
+\   'python': ['black'],
+\}
+
 " fixers
 let g:ale_fixers = {
 \   'go': ['gofmt', 'goimports'],
-\   'python': ['isort', 'black'],
+\   'json': ['fixjson'],
 \}
 
 " Set this setting in vimrc if you want to fix files automatically on save.

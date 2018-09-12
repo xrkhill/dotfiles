@@ -30,6 +30,7 @@ endfunction
 command! Matches <line1>,<line2>call Matches()
 
 " Map case typos
+command! E e
 command! W w
 command! Q q
 command! Qa qa

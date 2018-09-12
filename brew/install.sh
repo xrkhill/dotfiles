@@ -1,4 +1,5 @@
 brew install \
+go \
 rbenv ruby-build rbenv-vars\
 ssh-copy-id \
 wget \
@@ -32,6 +33,8 @@ terraform \
 editorconfig \
 ncdu \
 python \
+pg_top \
+mpv \
 dep
 
 brew cask install java
