@@ -628,7 +628,7 @@ hi! link LineNr Comment
 hi TabLine     term=bold cterm=bold ctermfg=225 ctermbg=053
 hi TabLineFill term=bold cterm=bold ctermfg=225 ctermbg=053
 hi TabLineSel  term=bold cterm=bold ctermfg=053 ctermbg=225
-hi Visual term=underline ctermbg=238 guibg=#29373
+hi Visual term=underline ctermbg=238
 
 " Invisible character colors
 hi NonText guifg=#4a4a59

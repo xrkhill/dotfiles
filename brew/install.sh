@@ -35,6 +35,9 @@ ncdu \
 python \
 pg_top \
 mpv \
+direnv \
+fzf \
+kubernetes-cli \
 dep
 
 brew cask install java
