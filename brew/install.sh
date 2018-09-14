@@ -40,6 +40,9 @@ fzf \
 kubernetes-cli \
 dep
 
+# finish installing fzf
+$(brew --prefix)/opt/fzf/install
+
 brew cask install java
 
 brew tap burntsushi/ripgrep https://github.com/BurntSushi/ripgrep.git
