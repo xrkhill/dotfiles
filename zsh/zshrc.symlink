@@ -53,6 +53,9 @@ bindkey '^[[Z' reverse-menu-complete
 
 # allow C-a | C-e in tmux
 bindkey -e
+bindkey '^R' history-incremental-search-backward
 
 # prepend space allow
 setopt histignorespace
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

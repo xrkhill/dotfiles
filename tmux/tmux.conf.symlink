@@ -33,7 +33,7 @@ bind '%' split-window -c "#{pane_current_path}" -h
 bind c new-window -c "#{pane_current_path}"
 
 # Unbind C-r, which is conflicting with fzf
-#bind -T root C-r send fzf-tmux C-m
+bind -T root C-r send fzf-history-widget-accept C-m
 
 # Fix long name issue with tmuxinator
 #set -g automatic-rename off
