@@ -71,9 +71,12 @@ command! Date call UTCDate()
 command! Time call UTCTime()
 command! UTCDate call UTCDate()
 command! UTCTime call UTCTime()
-
-" Print local datetime
-command! LocalTime put =strftime('%FT%T%z')
+command! UD call UTCDate()
+command! UT call UTCTime()
+command! LocalDate call LocalDate()
+command! LocalTime call LocalTime()
+command! LD call LocalDate()
+command! LT call LocalTime()
 
 " Splits
 function! SplitTwoByTwo()
