@@ -57,6 +57,16 @@ function! UTCTime()
   normal! "zp
 endfunction
 
+function! LocalDate()
+  let @z = ChompedSystem('date \+"%Y-%m-%d"')
+  normal! "zp
+endfunction
+
+function! LocalTime()
+  let @z = ChompedSystem('date \+"%Y-%m-%dT%H:%M%z"')
+  normal! "zp
+endfunction
+
 command! Date call UTCDate()
 command! Time call UTCTime()
 command! UTCDate call UTCDate()

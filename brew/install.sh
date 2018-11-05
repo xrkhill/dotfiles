@@ -38,6 +38,8 @@ mpv \
 direnv \
 fzf \
 kubernetes-cli \
+iftop \
+mysql \
 dep
 
 # finish installing fzf
