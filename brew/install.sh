@@ -62,6 +62,9 @@ brew cask install minikube
 
 brew install neovim/neovim/neovim
 
+brew tap wata727/tflint
+brew install tflint
+
 say "brew is done"
 
 brew install macvim --with-override-system-vim

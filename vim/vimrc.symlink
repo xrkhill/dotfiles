@@ -370,7 +370,7 @@ autocmd FileType markdown let b:dispatch = "open '%'"
 " tpope/vim-dispatch END ------------------------------------
 
 " plasticboy/vim-markdown -----------------------------------
-let g:vim_markdown_fenced_languages = ['bash=sh', 'envrc=sh', 'erb=eruby', 'rb=ruby', 'js=javascript', 'json=javascript', 'ruby', 'rb=ruby', 'sass', 'xml', 'ex=elixir', 'yml=yaml', 'gql=graphql', 'py=python']
+let g:vim_markdown_fenced_languages = ['bash=sh', 'envrc=sh', 'erb=eruby', 'rb=ruby', 'js=javascript', 'json=javascript', 'ruby', 'rb=ruby', 'sass', 'xml', 'ex=elixir', 'yml=yaml', 'gql=graphql', 'py=python', 'hcl=terraform']
 " plasticboy/vim-markdown END -------------------------------
 
 " jiangmiao/auto-pairs --------------------------------------
@@ -567,10 +567,14 @@ let g:disabled_ale_fixers = {
 \   'python': ['black'],
 \}
 
+let g:ale_linters = {
+\   'terraform': ['tflint'],
+\}
 " fixers
 let g:ale_fixers = {
 \   'go': ['gofmt', 'goimports'],
 \   'json': ['fixjson'],
+\   'terraform': ['terraform'],
 \}
 
 " Set this setting in vimrc if you want to fix files automatically on save.
