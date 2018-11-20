@@ -40,7 +40,8 @@ fzf \
 kubernetes-cli \
 iftop \
 mysql \
-dep
+dep \
+tidy-html5
 
 # finish installing fzf
 $(brew --prefix)/opt/fzf/install

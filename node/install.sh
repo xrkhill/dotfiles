@@ -1,2 +1,3 @@
 npm install -g \
-    fixjson
+    fixjson \
+    htmlhint
