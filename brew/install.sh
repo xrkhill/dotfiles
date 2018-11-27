@@ -41,7 +41,9 @@ kubernetes-cli \
 iftop \
 mysql \
 dep \
-tidy-html5
+tidy-html5 \
+ec2-ami-tools \
+erlang
 
 # finish installing fzf
 $(brew --prefix)/opt/fzf/install
