@@ -43,7 +43,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'jparise/vim-graphql'
 Plugin 'rmelcer/vim-icinga'
 "Plugin 'wannesm/wmgraphviz.vim'
-"Plugin 'elixir-lang/vim-elixir'
+Plugin 'elixir-lang/vim-elixir'
 "Plugin 'tpope/vim-rails'
 "Plugin 'gabrielelana/vim-markdown'
 "Plugin 'shime/vim-livedown'
@@ -136,6 +136,10 @@ set autoindent
 "set tabstop=4
 "set shiftwidth=4
 "set softtabstop=4
+
+" spelling -------------------------------------------------------------------
+set spellfile=~/.en.utf-8.add
+" spelling END ---------------------------------------------------------------
 
 " set filetype based on filename
 "autocmd BufNewFile,BufRead *.md set filetype=markdown
