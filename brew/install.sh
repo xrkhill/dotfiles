@@ -42,7 +42,7 @@ iftop \
 mysql \
 dep \
 tidy-html5 \
-ec2-ami-tools \
+protobuf \
 erlang
 
 # finish installing fzf
