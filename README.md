@@ -1,4 +1,4 @@
-# dhulihan does dotfiles
+# xrkhill does dotfiles
 
 Contains helpful tools, aliases, and configuration.
 

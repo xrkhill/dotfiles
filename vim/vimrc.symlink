@@ -22,71 +22,72 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
 " General Syntax
-"Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-endwise'
+Plugin 'vitalk/vim-shebang'
+"Plugin 'jiangmiao/auto-pairs'
 "Plugin 'tpope/vim-surround'
 "Plugin 'tpope/vim-repeat'
 "Plugin 'Valloric/YouCompleteMe'
-Plugin 'The-NERD-Commenter'
+"Plugin 'The-NERD-Commenter'
 "Plugin 'ludovicchabant/vim-gutentags' " blocking too much
-Plugin 'vitalk/vim-shebang'
 
 " Language-specific
 Plugin 'fatih/vim-go'
-Plugin 'robbles/logstash.vim'
 Plugin 'hashivim/vim-terraform'
 Plugin 'tpope/vim-cucumber'
 Plugin 'elubow/cql-vim'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'cespare/vim-toml'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'jparise/vim-graphql'
-Plugin 'rmelcer/vim-icinga'
+"Plugin 'jparise/vim-graphql'
+"Plugin 'robbles/logstash.vim'
+"Plugin 'rmelcer/vim-icinga'
 "Plugin 'wannesm/wmgraphviz.vim'
-Plugin 'elixir-lang/vim-elixir'
+"Plugin 'elixir-lang/vim-elixir'
 "Plugin 'tpope/vim-rails'
 "Plugin 'gabrielelana/vim-markdown'
 "Plugin 'shime/vim-livedown'
 "Plugin 'JamshedVesuna/vim-markdown-preview'
-" Plugin 'amiorin/vim-fenced-code-blocks' " does not support indentation
-" Plugin 'rhysd/vim-gfm-syntax' " cute but not needed
-Plugin 'chrisbra/csv.vim'
+"Plugin 'amiorin/vim-fenced-code-blocks' " does not support indentation
+"Plugin 'rhysd/vim-gfm-syntax' " cute but not needed
+"Plugin 'chrisbra/csv.vim'
 
 " Lint
-Plugin 'w0rp/ale'
+"Plugin 'w0rp/ale'
 "Plugin 'vim-syntastic/syntastic'
-Plugin 'maximbaz/lightline-ale'
+"Plugin 'maximbaz/lightline-ale'
 
 " Utility
 Plugin 'tpope/tpope-vim-abolish'
 Plugin 'mileszs/ack.vim'
-Plugin 'Rename2'
-"Plugin 'scrooloose/nerdtree'
+"Plugin 'Rename2'
+Plugin 'scrooloose/nerdtree'
 Plugin 'tmhedberg/matchit'
-"Plugin 'vim-scripts/ruby-matchit'
 Plugin 'ctrlpvim/ctrlp.vim'
+"Plugin 'vim-scripts/ruby-matchit'
 "Plugin 'mtth/scratch.vim'
 "Plugin 'vim-scripts/SearchComplete'
 
 " Colors
-Plugin 'flazz/vim-colorschemes'
-Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
-Plugin 'fenetikm/falcon'
+Plugin 'altercation/vim-colors-solarized'
+"Plugin 'flazz/vim-colorschemes'
+"Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
+"Plugin 'fenetikm/falcon'
 "Plugin 'vim-airline/vim-airline-themes'
 
 " Files & Buffers
 "Plugin 'jeetsukumaran/vim-buffergator'
-Plugin 'ton/vim-bufsurf'
-Plugin 'qpkorr/vim-bufkill'
-Plugin 'gcmt/taboo.vim'
-Plugin 'danro/rename.vim'
+"Plugin 'ton/vim-bufsurf'
+"Plugin 'qpkorr/vim-bufkill'
+"Plugin 'gcmt/taboo.vim'
+"Plugin 'danro/rename.vim'
 "Plugin 'fholgado/minibufexpl.vim'
 
 " Layout
 "Plugin 'bling/vim-airline'
-Plugin 'itchyny/lightline.vim'
-Plugin 'godlygeek/tabular'
-Plugin 'tyru/open-browser.vim'
+"Plugin 'itchyny/lightline.vim'
+"Plugin 'godlygeek/tabular'
+"Plugin 'tyru/open-browser.vim'
 "Plugin 'wincent/command-t'
 "Plugin 'vim-scripts/EasyGrep'
 Plugin 'editorconfig/editorconfig-vim.git'
@@ -163,7 +164,6 @@ set wildmode=longest,list
 " Pretty invisibles
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
-
 " Use the same symbols as TextMate for tabstops and EOLs
 "set listchars=tab:▸\ ,eol:¬
 
@@ -171,7 +171,7 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 " syntax match Error "\s\{2}$"
 
 " disable bells
-set noerrorbells visualbell t_vb=
+"set noerrorbells visualbell t_vb=
 
 " map leader to spacebar
 "let mapleader=" "
@@ -277,15 +277,15 @@ set hlsearch
 "set incsearch
 
 " Save search matches in separate file
-nnoremap <silent> <F4> :redir >>matches.tmp<CR>:g//<CR>:redir END<CR>:new matches.tmp<CR>
+"nnoremap <silent> <F4> :redir >>matches.tmp<CR>:g//<CR>:redir END<CR>:new matches.tmp<CR>
 
 " Syntax Highlighting on
 syntax on
 
 " netrw/Explorer
-let g:netrw_preview = 1 " preview file vertical split
-let g:netrw_liststyle = 1 " one file, timestamps
-nmap <C-n> :Vexplore<CR> " explorer in vertical split
+"let g:netrw_preview = 1 " preview file vertical split
+"let g:netrw_liststyle = 1 " one file, timestamps
+"nmap <C-n> :Vexplore<CR> " explorer in vertical split
 
 " Ack: map
 nmap <Leader>vv :Ack<cr>
@@ -293,21 +293,21 @@ set grepprg=rg\ --vimgrep
 let g:ackprg='rg --vimgrep'
 
 " lightline --------------------------------------------------
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'filename', 'modified', 'gitbranch' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
-      \ },
-      \ '_component': {
-      \   '_lineinfo': ' %3l:%-2v',
-      \ },
-      \ '_separator': { 'left': '', 'right': '' },
-      \ '_subseparator': { 'left': '', 'right': '' },
-      \ }
+"let g:lightline = {
+"      \ 'colorscheme': 'wombat',
+"      \ 'active': {
+"      \   'left': [ [ 'mode', 'paste' ],
+"      \             [ 'readonly', 'filename', 'modified', 'gitbranch' ] ]
+"      \ },
+"      \ 'component_function': {
+"      \   'gitbranch': 'fugitive#head'
+"      \ },
+"      \ '_component': {
+"      \   '_lineinfo': ' %3l:%-2v',
+"      \ },
+"      \ '_separator': { 'left': '', 'right': '' },
+"      \ '_subseparator': { 'left': '', 'right': '' },
+"      \ }
 " lightline END ----------------------------------------------
 
 " gutentags -------------------------------------------------
@@ -494,10 +494,10 @@ noremap <Leader>y :TagbarToggle<cr>
 "let g:easytags_async = 1 " generate tags asynchronously
 
 " nerdtree
-"map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 
 " close if only window is nerdtree
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " quit vim if no buffers
 "autocmd BufDelete * if len(filter(range(1, bufnr('$')), '! empty(bufname(v:val)) && buflisted(v:val)')) == 1 | quit | endif
@@ -600,44 +600,44 @@ let g:miniBufExplBRSplit = 0
 let g:miniBufExplBuffersNeeded = 2
 
 " Better colors
-hi MBENormal               ctermfg=069 guifg=#808080 guibg=fg
-hi MBEChanged              ctermfg=196 guifg=#CD5907 guibg=fg
-hi MBEVisibleNormal        ctermfg=069 guifg=#5DC2D6 guibg=fg
-hi MBEVisibleChanged       ctermfg=210 guifg=#F1266F guibg=fg
-hi MBEVisibleActiveNormal  ctermfg=046 guifg=#A6DB29 guibg=fg
-hi MBEVisibleActiveChanged ctermfg=214 guifg=#F1266F guibg=fg
+"hi MBENormal               ctermfg=069 guifg=#808080 guibg=fg
+"hi MBEChanged              ctermfg=196 guifg=#CD5907 guibg=fg
+"hi MBEVisibleNormal        ctermfg=069 guifg=#5DC2D6 guibg=fg
+"hi MBEVisibleChanged       ctermfg=210 guifg=#F1266F guibg=fg
+"hi MBEVisibleActiveNormal  ctermfg=046 guifg=#A6DB29 guibg=fg
+"hi MBEVisibleActiveChanged ctermfg=214 guifg=#F1266F guibg=fg
 
 " MiniBufExplorer END ---------------------------------------
 
 " Colors ----------------------------------------------------
 set background=dark
-colors apprentice
+colorscheme solarized
+"colors apprentice
 "colors falcon
 "colors jellybeans
 "colors hybrid
 "colors molokai
 "colors blackboard
 "colors hemisu
-"colorscheme bubblegum
 "colors noctu
+"colorscheme bubblegum
 "colorscheme nefertiti
 "colorscheme pencil
 "colorscheme badwolf
 "" enable transparent term support
 "let g:solarized_termtrans=1
-"colorscheme solarized
 
 " Current-scheme colors
-hi! link SignColumn Normal
-hi! link LineNr Comment
+"hi! link SignColumn Normal
+"hi! link LineNr Comment
 
 " Cross-scheme colors
 "hi! link ColorColumn Tabline
 "hi! link ColorColumn TablineFill
-hi TabLine     term=bold cterm=bold ctermfg=225 ctermbg=053
-hi TabLineFill term=bold cterm=bold ctermfg=225 ctermbg=053
-hi TabLineSel  term=bold cterm=bold ctermfg=053 ctermbg=225
-hi Visual term=underline ctermbg=238
+"hi TabLine     term=bold cterm=bold ctermfg=225 ctermbg=053
+"hi TabLineFill term=bold cterm=bold ctermfg=225 ctermbg=053
+"hi TabLineSel  term=bold cterm=bold ctermfg=053 ctermbg=225
+"hi Visual term=underline ctermbg=238
 
 " Invisible character colors
 hi NonText guifg=#4a4a59
