@@ -1,13 +1,13 @@
 brew install \
 go \
-rbenv ruby-build rbenv-vars\
+rbenv ruby-build rbenv-vars \
 ssh-copy-id \
 wget \
 wdiff \
 terminal-notifier \
 cmake \
 direnv \
-ctags \ # exuberant
+ctags \
 ack \
 libffi \
 jq \
@@ -22,10 +22,10 @@ ncdu \
 pg_top \
 direnv \
 fzf \
-kubernetes-cli \
 iftop \
 dep \
 protobuf \
+pwgen
 
 # finish installing fzf
 $(brew --prefix)/opt/fzf/install
@@ -47,7 +47,8 @@ say "brew is done"
 
 brew install macvim --with-override-system-vim
 #brew link curl --force
-brew linkapps
+
+#brew linkapps # deprecated?
 
 # Sierra
 brew install reattach-to-user-namespace

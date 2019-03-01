@@ -1,3 +1,3 @@
-npm install -g \
-    fixjson \
-    htmlhint
+#npm install -g \
+#    fixjson \
+#    htmlhint
