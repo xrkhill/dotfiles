@@ -54,16 +54,17 @@ Plugin 'plasticboy/vim-markdown'
 
 " Lint
 "Plugin 'w0rp/ale'
-"Plugin 'vim-syntastic/syntastic'
+Plugin 'vim-syntastic/syntastic'
 "Plugin 'maximbaz/lightline-ale'
 
 " Utility
 Plugin 'tpope/tpope-vim-abolish'
 Plugin 'mileszs/ack.vim'
-"Plugin 'Rename2'
+Plugin 'Rename2'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tmhedberg/matchit'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'junegunn/vim-easy-align'
 "Plugin 'vim-scripts/ruby-matchit'
 "Plugin 'mtth/scratch.vim'
 "Plugin 'vim-scripts/SearchComplete'
@@ -98,6 +99,9 @@ Plugin 'majutsushi/tagbar'
 " Build
 Plugin 'tpope/vim-dispatch'
 
+" Productivity
+Plugin 'wakatime/vim-wakatime'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -105,8 +109,9 @@ filetype plugin indent on    " required
 " K, Add custom stuff below ---
 
 " Line Numbers
-set nonumber
+"set nonumber
 "highlight LineNr ctermfg=darkgrey
+set nu " line numbers on, please!
 
 " Recognize dash-separated values as words
 set iskeyword+=-
@@ -118,6 +123,8 @@ set hidden
 set splitright
 set splitbelow
 
+" Do not wrap lines, please!
+set nowrap
 
 "make sure to escape the spaces in the name properly
 "set guifont=Source\ Code\ Pro\ for\ Powerline
@@ -493,6 +500,34 @@ noremap <Leader>y :TagbarToggle<cr>
 "let g:easytags_dynamic_files = 2 " write project-specific tags
 "let g:easytags_async = 1 " generate tags asynchronously
 
+let g:tagbar_type_go = {
+	\ 'ctagstype' : 'go',
+	\ 'kinds'     : [
+		\ 'p:package',
+		\ 'i:imports:1',
+		\ 'c:constants',
+		\ 'v:variables',
+		\ 't:types',
+		\ 'n:interfaces',
+		\ 'w:fields',
+		\ 'e:embedded',
+		\ 'm:methods',
+		\ 'r:constructor',
+		\ 'f:functions'
+	\ ],
+	\ 'sro' : '.',
+	\ 'kind2scope' : {
+		\ 't' : 'ctype',
+		\ 'n' : 'ntype'
+	\ },
+	\ 'scope2kind' : {
+		\ 'ctype' : 't',
+		\ 'ntype' : 'n'
+	\ },
+	\ 'ctagsbin'  : 'gotags',
+	\ 'ctagsargs' : '-sort -silent'
+\ }
+
 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
 
@@ -529,9 +564,9 @@ let g:buffergator_sort_regime='filepath' " sort on full filepath
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
@@ -546,21 +581,21 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_ruby_rubocop_executable = 'bundle exec rubocop'
 
 " lightline-ale
-let g:lightline.component_expand = {
-      \  'linter_warnings': 'lightline#ale#warnings',
-      \  'linter_errors': 'lightline#ale#errors',
-      \  'linter_ok': 'lightline#ale#ok',
-      \ }
-
-let g:lightline.component_type = {
-      \     'linter_warnings': 'warning',
-      \     'linter_errors': 'error',
-      \ }
-
-let g:lightline.active = { 'right': [ ['lineinfo'],
-		    \            [ 'percent' ],
-		    \            [ 'fileformat', 'fileencoding', 'filetype' ],
-		    \            ['ruler', 'linter_errors', 'linter_warnings', 'linter_ok' ]] }
+"let g:lightline.component_expand = {
+"      \  'linter_warnings': 'lightline#ale#warnings',
+"      \  'linter_errors': 'lightline#ale#errors',
+"      \  'linter_ok': 'lightline#ale#ok',
+"      \ }
+"
+"let g:lightline.component_type = {
+"      \     'linter_warnings': 'warning',
+"      \     'linter_errors': 'error',
+"      \ }
+"
+"let g:lightline.active = { 'right': [ ['lineinfo'],
+"		    \            [ 'percent' ],
+"		    \            [ 'fileformat', 'fileencoding', 'filetype' ],
+"		    \            ['ruler', 'linter_errors', 'linter_warnings', 'linter_ok' ]] }
 
 " resolve fight between vim-go and ale
 "let g:go_fmt_fail_silently = 1
@@ -645,5 +680,14 @@ hi SpecialKey guifg=#4a4a59
 
 
 " Colors END -----------------------------------------------
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" Show column and line numbers in status bar
+set ruler
 
 source ~/.vimfunctions.vim

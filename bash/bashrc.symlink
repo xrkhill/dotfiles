@@ -1,8 +1,6 @@
-# Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH";
-
 # dotfiles src
 export DOTFILES=$HOME/.dotfiles
+export PROJECTS=~/Projects
 
 # Load commonfiles
 for sh_common in `ls $DOTFILES/**/*.sh-common`
@@ -14,7 +12,15 @@ done
 # Load bashfiles
 for scriptfile in `ls $DOTFILES/**/*.bash`
 do
-   source $scriptfile
+	#echo "sourcing ${scriptfile}"
+	source $scriptfile
 done
 
+# cd to go files easily
+export CDPATH=.:$GOPATH/src/weavelab.xyz:$GOPATH/src/github.com:$GOPATH/src/golang.org:$GOPATH/src
+
+# iterm2 shell integration
+#test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+# fuzzy finder https://github.com/junegunn/fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
