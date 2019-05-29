@@ -19,9 +19,6 @@ alias p="ps aux | grep"
 # grep
 alias grin='grep -rin'
 
-# Move to /tmp instead of hard delete
-alias rmv="mv -t /tmp"
-
 # Enhanced WHOIS lookups
 #alias whois="whois -h whois-servers.net"
 
@@ -48,5 +45,15 @@ alias mv="mv -i"
 alias cp="cp -i"
 alias ln="ln -i"
 
+# Move to /tmp instead of hard delete
+alias rmv="mv -t /tmp"
+
 # Resume wget by default
 alias wget="wget -c"
+
+# Use GNU chmod (includes -c changes flag)
+alias chmod="gchmod"
+
+# Weave desktop client dev / prod config switcher
+alias devweave='cp /Users/richard.hill@getweave.com/.dotfiles/bash/dev-config.ini ~/Library/Application\ Support/Weave/config.ini'
+alias prodweave='cp /Users/richard.hill@getweave.com/.dotfiles/bash/prod-config.ini ~/Library/Application\ Support/Weave/config.ini'

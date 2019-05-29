@@ -13,3 +13,6 @@ vim/*.spl
 *.swo
 *.swp
 *.sublime-workspace
+
+/bash/*-config.ini
+/system/env.bash
