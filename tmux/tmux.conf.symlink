@@ -4,6 +4,9 @@ setw -g mouse on
 # clear scrollback buffer
 bind -n C-k clear-history
 
+# set scrollback buffer history limit
+set-option -g history-limit 250000
+
 # allow scrolling
 bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'copy-mode -e'"
 
