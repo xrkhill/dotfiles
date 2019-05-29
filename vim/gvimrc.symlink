@@ -12,4 +12,5 @@
 " disable bells
 "set noeb vb t_vb="
 
-set guifont=Inconsolata:h16
+"set guifont=Inconsolata:h16
+"colorscheme solarized

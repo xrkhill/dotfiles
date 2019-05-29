@@ -15,7 +15,7 @@ Plugin 'gmarik/Vundle.vim'
 "Plugin 'benmills/vimux'
 
 " Startup
-Plugin 'mhinz/vim-startify'
+"Plugin 'mhinz/vim-startify'
 
 " Version Control
 Plugin 'tpope/vim-fugitive'
@@ -32,13 +32,15 @@ Plugin 'vitalk/vim-shebang'
 "Plugin 'ludovicchabant/vim-gutentags' " blocking too much
 
 " Language-specific
-Plugin 'fatih/vim-go'
-Plugin 'hashivim/vim-terraform'
-Plugin 'tpope/vim-cucumber'
-Plugin 'elubow/cql-vim'
+Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+"Plugin 'hashivim/vim-terraform'
+"Plugin 'tpope/vim-cucumber'
+"Plugin 'elubow/cql-vim'
 Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'cespare/vim-toml'
+"Plugin 'cespare/vim-toml'
 Plugin 'plasticboy/vim-markdown'
+"Plugin 'avakhov/vim-yaml'
+"Plugin 'towolf/vim-helm'
 "Plugin 'jparise/vim-graphql'
 "Plugin 'robbles/logstash.vim'
 "Plugin 'rmelcer/vim-icinga'
@@ -64,17 +66,17 @@ Plugin 'Rename2'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tmhedberg/matchit'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'junegunn/vim-easy-align'
+"Plugin 'junegunn/vim-easy-align'
 "Plugin 'vim-scripts/ruby-matchit'
 "Plugin 'mtth/scratch.vim'
 "Plugin 'vim-scripts/SearchComplete'
 
 " Colors
-Plugin 'altercation/vim-colors-solarized'
-"Plugin 'flazz/vim-colorschemes'
+"Plugin 'altercation/vim-colors-solarized'
+Plugin 'flazz/vim-colorschemes'
 "Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 "Plugin 'fenetikm/falcon'
-"Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Files & Buffers
 "Plugin 'jeetsukumaran/vim-buffergator'
@@ -85,7 +87,7 @@ Plugin 'altercation/vim-colors-solarized'
 "Plugin 'fholgado/minibufexpl.vim'
 
 " Layout
-"Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
 "Plugin 'itchyny/lightline.vim'
 "Plugin 'godlygeek/tabular'
 "Plugin 'tyru/open-browser.vim'
@@ -117,7 +119,7 @@ set nu " line numbers on, please!
 set iskeyword+=-
 
 " hide modified buffers instead of closing them
-set hidden
+"set hidden
 
 " Split windows to the right and bottom for horz/vert
 set splitright
@@ -175,7 +177,7 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 "set listchars=tab:▸\ ,eol:¬
 
 " Highlight one or more trailing spaces
-" syntax match Error "\s\{2}$"
+syntax match Error "\s\{2}$"
 
 " disable bells
 "set noerrorbells visualbell t_vb=
@@ -296,7 +298,7 @@ syntax on
 
 " Ack: map
 nmap <Leader>vv :Ack<cr>
-set grepprg=rg\ --vimgrep
+set grepprg=rg\ --smart-case\ --vimgrep
 let g:ackprg='rg --vimgrep'
 
 " lightline --------------------------------------------------
@@ -328,13 +330,13 @@ let g:ackprg='rg --vimgrep'
 "
 " enable/disable tabline
 "   if disabled, will show buffers when only one tab open
-let g:airline#extensions#tabline#enabled = 0
+"let g:airline#extensions#tabline#enabled = 0
 
 " enable/disable buffer line
-let g:airline#extensions#bufferline#enabled = 0
+"let g:airline#extensions#bufferline#enabled = 0
 
 " use powerline glyphs for symbols
-let g:airline_powerline_fonts = 1
+"let g:airline_powerline_fonts = 1
 
 " show all the time, not just on splits
 set laststatus=2
@@ -408,6 +410,7 @@ au BufNewFile,BufRead Jenkinsfile setf groovy
 
 " disable fmt on autosave, use linter
 let g:go_fmt_autosave = 0
+let g:go_def_mode='gopls'
 
 " fatih/vim-go END ------------------------------------------
 
@@ -646,12 +649,15 @@ let g:miniBufExplBuffersNeeded = 2
 
 " Colors ----------------------------------------------------
 set background=dark
-colorscheme solarized
+set guifont=Inconsolata:h16
+colorscheme space-vim-dark
+"colorscheme molokai
+"colorscheme solarized
+
 "colors apprentice
 "colors falcon
 "colors jellybeans
 "colors hybrid
-"colors molokai
 "colors blackboard
 "colors hemisu
 "colors noctu
