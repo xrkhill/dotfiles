@@ -33,6 +33,7 @@ Plugin 'vitalk/vim-shebang'
 
 " Language-specific
 Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plugin 'mdempsky/gocode', {'rtp': 'vim/'}
 "Plugin 'hashivim/vim-terraform'
 "Plugin 'tpope/vim-cucumber'
 "Plugin 'elubow/cql-vim'
@@ -111,9 +112,11 @@ filetype plugin indent on    " required
 " K, Add custom stuff below ---
 
 " Line Numbers
-"set nonumber
 "highlight LineNr ctermfg=darkgrey
+"set nonumber
 set nu " line numbers on, please!
+set nowrap " Do not wrap lines, please!
+"set textwidth=80
 
 " Recognize dash-separated values as words
 set iskeyword+=-
@@ -125,8 +128,11 @@ set iskeyword+=-
 set splitright
 set splitbelow
 
-" Do not wrap lines, please!
-set nowrap
+" Map ctrl-w split movement command shortcuts
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 "make sure to escape the spaces in the name properly
 "set guifont=Source\ Code\ Pro\ for\ Powerline
@@ -184,7 +190,7 @@ syntax match Error "\s\{2}$"
 
 " map leader to spacebar
 "let mapleader=" "
-map <Space> <Leader>
+"map <Space> <Leader>
 
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
@@ -233,15 +239,15 @@ nmap <Leader>f :b
 "nnoremap <S-Tab> :bprevious<CR>
 
 " Tabs
-nmap = :tabn<cr>
-nmap - :tabp<cr>
-nmap _ :tabm -1<cr>
-nmap + :tabm +1<cr>
+"nmap = :tabn<cr>
+"nmap - :tabp<cr>
+"nmap _ :tabm -1<cr>
+"nmap + :tabm +1<cr>
 "nmap ( :tabclose<cr>
 "nmap ) :tabnew<cr>
 
 " Map ctrl+return to auto/smart indent
-imap <C-Return> <CR><CR><C-o>k<Tab>
+"imap <C-Return> <CR><CR><C-o>k<Tab>
 
 " lazy indent
 "nmap <Tab> >>
@@ -411,6 +417,9 @@ au BufNewFile,BufRead Jenkinsfile setf groovy
 " disable fmt on autosave, use linter
 let g:go_fmt_autosave = 0
 let g:go_def_mode='gopls'
+nmap <leader>ge :GoIfErr<CR>
+nmap <leader>gf :GoFmt<CR>
+nmap <leader>gb :GoBuild<CR>
 
 " fatih/vim-go END ------------------------------------------
 
