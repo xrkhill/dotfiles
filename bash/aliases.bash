@@ -10,8 +10,11 @@ alias reload!='source ~/.bashrc'
 alias ls='gls --color=auto'
 alias ll='gls -lh --color=auto'
 alias lll='gls -pliah --color=auto'
+alias ls='lsd'
+alias ll='lsd -l'
 
 alias find-recently-modified="print -rl **/*(.0m)"
+alias swp="find ${PWD} -name \"*.swp\" -type f -print0 | xargs -0 -p /bin/rm"
 
 # Generic process finder
 alias p="ps aux | grep"

@@ -1,6 +1,3 @@
-# Bash completion for bash 3.2
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
-
 #if type brew 2&>/dev/null; then
 #  for COMPLETION in $(brew --prefix)/etc/bash_completion.d/*
 #  do
