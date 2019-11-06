@@ -156,7 +156,8 @@ set autoindent
 "set softtabstop=4
 
 " spelling -------------------------------------------------------------------
-set spellfile=~/.en.utf-8.add
+"TODO set correct path?
+"set spellfile=~/.en.utf-8.add
 " spelling END ---------------------------------------------------------------
 
 " set filetype based on filename
@@ -305,9 +306,9 @@ syntax on
 "nmap <C-n> :Vexplore<CR> " explorer in vertical split
 
 " Ack: map
-nmap <Leader>vv :Ack<cr>
+"nmap <Leader>vv :Ack<cr>
 set grepprg=rg\ --smart-case\ --vimgrep
-let g:ackprg='rg --vimgrep'
+"let g:ackprg='rg --vimgrep'
 
 " lightline --------------------------------------------------
 "let g:lightline = {
