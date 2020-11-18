@@ -1,3 +1,10 @@
+" Set reasonable defaults, like sensible backspace behavior
+unlet! skip_defaults_vim
+source $VIMRUNTIME/defaults.vim
+
+" fzf command-line fuzzy finder
+set rtp+=/usr/local/opt/fzf
+
 " Startup Vundle
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -11,12 +18,6 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" System
-"Plugin 'benmills/vimux'
-
-" Startup
-"Plugin 'mhinz/vim-startify'
-
 " Version Control
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
@@ -24,62 +25,48 @@ Plugin 'airblade/vim-gitgutter'
 " General Syntax
 Plugin 'tpope/vim-endwise'
 Plugin 'vitalk/vim-shebang'
-"Plugin 'jiangmiao/auto-pairs'
-"Plugin 'tpope/vim-surround'
-"Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'The-NERD-Commenter'
-"Plugin 'ludovicchabant/vim-gutentags' " blocking too much
+"Plugin 'jiangmiao/auto-pairs'
 
 " Language-specific
 Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plugin 'mdempsky/gocode', {'rtp': 'vim/'}
 Plugin 'hashivim/vim-terraform'
-"Plugin 'tpope/vim-cucumber'
-"Plugin 'elubow/cql-vim'
 Plugin 'ekalinin/Dockerfile.vim'
-"Plugin 'cespare/vim-toml'
 Plugin 'plasticboy/vim-markdown'
-"Plugin 'avakhov/vim-yaml'
-"Plugin 'towolf/vim-helm'
-"Plugin 'jparise/vim-graphql'
-"Plugin 'robbles/logstash.vim'
-"Plugin 'rmelcer/vim-icinga'
-"Plugin 'wannesm/wmgraphviz.vim'
-"Plugin 'elixir-lang/vim-elixir'
+Plugin 'avakhov/vim-yaml'
+Plugin 'kamailio/vim-kamailio-syntax'
+"Plugin 'cespare/vim-toml'
 "Plugin 'tpope/vim-rails'
-"Plugin 'gabrielelana/vim-markdown'
-"Plugin 'shime/vim-livedown'
-"Plugin 'JamshedVesuna/vim-markdown-preview'
-"Plugin 'amiorin/vim-fenced-code-blocks' " does not support indentation
-"Plugin 'rhysd/vim-gfm-syntax' " cute but not needed
 "Plugin 'chrisbra/csv.vim'
 
 " Lint
-"Plugin 'w0rp/ale'
 Plugin 'vim-syntastic/syntastic'
+"Plugin 'w0rp/ale'
 "Plugin 'maximbaz/lightline-ale'
 
 " Utility
 Plugin 'tpope/tpope-vim-abolish'
-Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-eunuch'
 Plugin 'Rename2'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tmhedberg/matchit'
-Plugin 'ctrlpvim/ctrlp.vim'
-"Plugin 'junegunn/vim-easy-align'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'dhulihan/vim-rfc'
+"Plugin 'mileszs/ack.vim'
+"Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'vim-scripts/ruby-matchit'
 "Plugin 'mtth/scratch.vim'
 "Plugin 'vim-scripts/SearchComplete'
-Plugin 'dhulihan/vim-rfc'
 
 " Colors
-"Plugin 'altercation/vim-colors-solarized'
 Plugin 'flazz/vim-colorschemes'
-"Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
-"Plugin 'fenetikm/falcon'
 Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'altercation/vim-colors-solarized'
+"Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 
 " Files & Buffers
 "Plugin 'jeetsukumaran/vim-buffergator'
@@ -92,14 +79,14 @@ Plugin 'vim-airline/vim-airline-themes'
 " Layout
 Plugin 'vim-airline/vim-airline'
 "Plugin 'itchyny/lightline.vim'
-"Plugin 'godlygeek/tabular'
+Plugin 'godlygeek/tabular'
+Plugin 'editorconfig/editorconfig-vim.git'
+Plugin 'majutsushi/tagbar'
 "Plugin 'tyru/open-browser.vim'
 "Plugin 'wincent/command-t'
 "Plugin 'vim-scripts/EasyGrep'
-Plugin 'editorconfig/editorconfig-vim.git'
 "Plugin 'xolox/vim-misc'
 "Plugin 'xolox/vim-easytags'
-Plugin 'majutsushi/tagbar'
 
 " Build
 Plugin 'tpope/vim-dispatch'
@@ -113,18 +100,18 @@ filetype plugin indent on    " required
 
 " K, Add custom stuff below ---
 
+" Write behavior
+" yes means make a copy and overwrite original, better for entr(1) on Mac
+set backupcopy=yes
+
 " Line Numbers
-"highlight LineNr ctermfg=darkgrey
-"set nonumber
 set nu " line numbers on, please!
 set nowrap " Do not wrap lines, please!
-"set textwidth=80
+set textwidth=80
+"highlight LineNr ctermfg=darkgrey
 
 " Recognize dash-separated values as words
 set iskeyword+=-
-
-" hide modified buffers instead of closing them
-"set hidden
 
 " Split windows to the right and bottom for horz/vert
 set splitright
@@ -135,9 +122,6 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
-"make sure to escape the spaces in the name properly
-"set guifont=Source\ Code\ Pro\ for\ Powerline
 
 " copy unnamed register to clipboard in macvim/gvim
 "set clipboard=unnamed
@@ -155,22 +139,20 @@ set autoindent
 "set shiftwidth=4
 "set softtabstop=4
 
-" spelling -------------------------------------------------------------------
+" Spelling
 "TODO set correct path?
 "set spellfile=~/.en.utf-8.add
-" spelling END ---------------------------------------------------------------
 
-" set filetype based on filename
+" Set filetype based on filename
 "autocmd BufNewFile,BufRead *.md set filetype=markdown
 autocmd BufNewFile,BufRead *.template set filetype=json
 autocmd BufNewFile,BufRead .envrc set filetype=sh
 
-" filetype-specific config
+" Filetype specific config
 autocmd Filetype markdown setlocal spell
 autocmd Filetype terraform setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype docker-compose setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-autocmd Filetype logstash setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype groovy setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype go setlocal tabstop=4 shiftwidth=4
 
@@ -181,19 +163,14 @@ set wildmode=longest,list
 
 " Pretty invisibles
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-
 " Use the same symbols as TextMate for tabstops and EOLs
 "set listchars=tab:▸\ ,eol:¬
 
 " Highlight one or more trailing spaces
 syntax match Error "\s\{2}$"
 
-" disable bells
+" Disable bells
 "set noerrorbells visualbell t_vb=
-
-" map leader to spacebar
-"let mapleader=" "
-"map <Space> <Leader>
 
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
@@ -206,7 +183,7 @@ nnoremap <F2> :set invpaste paste?<CR>
 imap <F2> <C-O>:set invpaste paste?<CR>
 set pastetoggle=<F2>
 
-" number mode toggle
+" Number mode toggle
 noremap <F3> :set invnumber<CR>
 inoremap <F3> <C-O>:set invnumber<CR>
 
@@ -215,29 +192,15 @@ set cinkeys=0{,0},:,0#,!^F
 " make C-C esc for InsertLeave, etc (insert)
 ino <C-C> <Esc>
 
-" visual indicator for insert mode
-"augroup InsertColors
-	"au InsertEnter * colors dracula | AirlineRefresh
-	"au InsertLeave * colors molokai | AirlineRefresh
-"augroup END
-
-" beginning/end of line, shell style (insert)
-inoremap <C-e> <Esc>A
-inoremap <C-a> <Esc>I
-
-" Easier saving
-"nmap S :w<cr>
-"nmap <C-i> :q<cr>
-
 " map buffer movement (normal)
 " <Leader>s requires release of <Leader> :(
 "nmap <Leader>s :bn!<esc><cr>
 "nmap <Leader>a :bp!<esc><cr>
-nmap <Leader>s :BufSurfForward<cr>
-nmap <Leader>a :BufSurfBack<cr>
+"nmap <Leader>s :BufSurfForward<cr>
+"nmap <Leader>a :BufSurfBack<cr>
 "nmap <Leader>d :bd<esc><cr>
-nmap <Leader>d :BD<cr>
-nmap <Leader>f :b
+"nmap <Leader>d :BD<cr>
+"nmap <Leader>f :b
 "nnoremap <Tab> :bnext<CR>
 "nnoremap <S-Tab> :bprevious<CR>
 
@@ -256,11 +219,6 @@ nmap <Leader>f :b
 "nmap <Tab> >>
 "nmap <S-Tab> <<
 "imap <S-Tab> <Esc><<i
-
-" Map insert abnormals. Must be typed quickly!
-" imap wq <Esc>:wq<cr>
-" imap ww <Esc>:w<cr>i
-" imap jj <Esc>
 
 " In visual mode, make indent/unindent reselect after indent
 "vmap <TAB> >gv
@@ -300,11 +258,6 @@ set hlsearch
 " Syntax Highlighting on
 syntax on
 
-" netrw/Explorer
-"let g:netrw_preview = 1 " preview file vertical split
-"let g:netrw_liststyle = 1 " one file, timestamps
-"nmap <C-n> :Vexplore<CR> " explorer in vertical split
-
 " Ack: map
 "nmap <Leader>vv :Ack<cr>
 set grepprg=rg\ --smart-case\ --vimgrep
@@ -327,13 +280,6 @@ set grepprg=rg\ --smart-case\ --vimgrep
 "      \ '_subseparator': { 'left': '', 'right': '' },
 "      \ }
 " lightline END ----------------------------------------------
-
-" gutentags -------------------------------------------------
-"autocmd User GutentagsUpdating unsilent echo "Gutentagging..."
-"autocmd User GutentagsUpdated unsilent echo "Gutentagged!"
-"autocmd User GutentagsUpdating call lightline#update()
-"autocmd User GutentagsUpdated call lightline#update()
-" gutentags END ---------------------------------------------
 
 " Airline ----------------------------------------------------
 "
@@ -417,9 +363,10 @@ au BufNewFile,BufRead Jenkinsfile setf groovy
 
 " fatih/vim-go ----------------------------------------------
 
-" disable fmt on autosave, use linter
+" autosave go fmt setting, and use linter
 let g:go_fmt_autosave = 0
 let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 nmap <leader>ge :GoIfErr<CR>
 nmap <leader>gf :GoFmt<CR>
 nmap <leader>gb :GoBuild<CR>
@@ -449,27 +396,88 @@ let g:markdown_enable_input_abbreviations = 0
 let g:livedown_autorun = 0
 let g:livedown_open = 0
 
+"###############################################################################
+" fzf command-line fuzzy finder
+"###############################################################################
+" This is the default extra key bindings
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" An action can be a reference to a function that processes selected lines
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+  cc
+endfunction
+
+let g:fzf_action = {
+  \ 'ctrl-q': function('s:build_quickfix_list'),
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" Default fzf layout
+" - down / up / left / right
+"let g:fzf_layout = { 'down': '~40%' }
+" You can set up fzf window using a Vim command (Neovim or latest Vim 8 required)
+let g:fzf_layout = { 'window': 'enew' }
+"let g:fzf_layout = { 'window': '-tabnew' }
+"let g:fzf_layout = { 'window': '10new' }
+
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Function'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+" Enable per-command history.
+" CTRL-N and CTRL-P will be automatically bound to next-history and
+" previous-history instead of down and up. If you don't like the change,
+" explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+
+command! FZFBuffer call fzf#run({
+\ 'source': map(filter(range(1, bufnr('$')), 'buflisted(v:val)'), 'bufname(v:val)'),
+\ 'window': 'enew'
+\ })
+
+nnoremap <silent> <C-p> :FZF<CR>
+nnoremap <silent> <C-\> :FZFBuffer<CR>
+"nnoremap <silent> <C-p> :Files<CR>
+"nnoremap <silent> <C-\> :Buffers<CR>
+"###############################################################################
+" FZF END
+"###############################################################################
+
 " CtrlP
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_reuse_window  = 'startify' " fix new window split issue
-let g:ctrlp_open_new_file = 'r' " open new file in current window
-let g:ctrlp_working_path_mode = 0 " disable fancy working path
-let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:20'
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.(git|hg|svn))|(tmp|node_modules|dist|vendor/bundle)$',
-  \ 'file': '\v\.(exe|so|dll|jpg|jpeg|png|swp|swo)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
-let g:ctrlp_bufname_mod = ':.' " show full path relative to cwd
-let g:ctrlp_bufpath_mod = '' " nothing in the path section
-let g:ctrlp_switch_buffer = '' " don't switch to already displayed buffers
-
-" set custom cmd for ignoring things in gitignore (when in project root)
-"let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-
-" ignore everything in gitignore (regardless of project depth)
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-
+"let g:ctrlp_show_hidden = 1
+"let g:ctrlp_reuse_window  = 'startify' " fix new window split issue
+"let g:ctrlp_open_new_file = 'r' " open new file in current window
+"let g:ctrlp_working_path_mode = 0 " disable fancy working path
+"let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:20'
+"let g:ctrlp_custom_ignore = {
+"  \ 'dir':  '\v[\/](\.(git|hg|svn))|(tmp|node_modules|dist|vendor/bundle)$',
+"  \ 'file': '\v\.(exe|so|dll|jpg|jpeg|png|swp|swo)$',
+"  \ 'link': 'some_bad_symbolic_links',
+"  \ }
+"let g:ctrlp_bufname_mod = ':.' " show full path relative to cwd
+"let g:ctrlp_bufpath_mod = '' " nothing in the path section
+"let g:ctrlp_switch_buffer = '' " don't switch to already displayed buffers
+"
+"" ignore everything in gitignore (regardless of project depth)
+"let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
 
 " mtth/scratch.vim ------------------------------------------
 
@@ -490,19 +498,8 @@ nmap gs <plug>(scratch-insert-reuse)
 
 " mtth/scratch.vim END --------------------------------------
 
-" list buffers nicely
-nmap <C-\> :CtrlPBuffer<cr>
-
 " YCM ON EVERYTHING
 "let g:ycm_filetype_blacklist = {}
-
-" vimux bindings
-nmap <Leader>rp :VimuxPromptCommand<CR>
-nmap <Leader>rl :VimuxRunLastCommand<CR>
-nmap <Leader>ri :VimuxInspectRunner<CR>
-nmap <Leader>rx :VimuxCloseRunner<CR>
-nmap <Leader>rz :VimuxZoomRunner<CR>
-nmap <Leader>rs :VimuxInterruptRunner<CR>
 
 " tags
 "set tags=./tags
@@ -548,9 +545,6 @@ map <C-n> :NERDTreeToggle<CR>
 
 " close if only window is nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" quit vim if no buffers
-"autocmd BufDelete * if len(filter(range(1, bufnr('$')), '! empty(bufname(v:val)) && buflisted(v:val)')) == 1 | quit | endif
 
 " startify
 let g:startify_custom_header = []
@@ -666,19 +660,7 @@ set guifont=Inconsolata:h16
 colorscheme space-vim-dark
 "colorscheme molokai
 "colorscheme solarized
-
-"colors apprentice
-"colors falcon
-"colors jellybeans
-"colors hybrid
-"colors blackboard
-"colors hemisu
-"colors noctu
-"colorscheme bubblegum
-"colorscheme nefertiti
-"colorscheme pencil
-"colorscheme badwolf
-"" enable transparent term support
+" enable transparent term support
 "let g:solarized_termtrans=1
 
 " Current-scheme colors
@@ -696,7 +678,6 @@ colorscheme space-vim-dark
 " Invisible character colors
 hi NonText guifg=#4a4a59
 hi SpecialKey guifg=#4a4a59
-
 
 " Colors END -----------------------------------------------
 

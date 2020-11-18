@@ -7,17 +7,17 @@ function title {
 alias reload!='source ~/.bashrc'
 
 # Make ls great again
-alias ls='gls --color=auto'
-alias ll='gls -lh --color=auto'
-alias lll='gls -pliah --color=auto'
+#alias ls='gls --color=auto'
+#alias ll='gls -lh --color=auto'
+#alias lll='gls -pliah --color=auto'
 alias ls='lsd'
 alias ll='lsd -l'
 
 alias find-recently-modified="print -rl **/*(.0m)"
-alias swp="find ${PWD} -name \"*.swp\" -type f -print0 | xargs -0 -p /bin/rm"
 
 # Generic process finder
-alias p="ps aux | grep"
+#alias p="ps aux | grep"
+alias p="ps ax | grep"
 
 # grep
 alias grin='grep -rin'
@@ -60,3 +60,8 @@ alias chmod="gchmod"
 # Weave desktop client dev / prod config switcher
 alias devweave='cp /Users/richard.hill@getweave.com/.dotfiles/bash/dev-config.ini ~/Library/Application\ Support/Weave/config.ini'
 alias prodweave='cp /Users/richard.hill@getweave.com/.dotfiles/bash/prod-config.ini ~/Library/Application\ Support/Weave/config.ini'
+
+# URL encode / decode
+alias urldecode='python3 -c "import sys, urllib.parse as ul; print(ul.unquote_plus(sys.argv[1]))"'
+alias urlencode='python3 -c "import sys, urllib.parse as ul; \
+    print (ul.quote_plus(sys.argv[1]))"'
