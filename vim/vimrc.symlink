@@ -234,9 +234,8 @@ nmap gp `[v`]
 set mouse=a
 
 " tmux mousefix
-if &term =~ '^screen'
-    " tmux knows the extended mouse mode
-    set ttymouse=xterm2
+if has('mouse_sgr')
+    set ttymouse=sgr
 endif
 
 " Smooth scroll

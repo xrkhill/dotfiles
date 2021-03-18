@@ -1,6 +1,7 @@
 # if we already loaded, perform verbose logging
 if [[ $ZSH_LOADED == true ]] ; then
-	export LOG_LEVEL=debug
+	#export LOG_LEVEL=debug
+	export LOG_LEVEL=info
 else
 	export LOG_LEVEL=info
 fi
