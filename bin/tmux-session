@@ -20,13 +20,17 @@ tmux a -t $SESSION_NAME
 
 if [[ $? -ne 0 ]] ; then
 	tmux new -s $SESSION_NAME -d
+	tmux split-window -t $SESSION_NAME
 
 	# create windows
 	tmux new-window -t $SESSION_NAME -n vim
 
 	# open vim on second window
 	tmux send-keys -t $SESSION_NAME:2 "vim" C-m
-	tmux select-window -t $SESSION_NAME:2
+	#tmux select-window -t $SESSION_NAME:2
+
+	# open shell on first window
+	tmux select-window -t $SESSION_NAME:1
 
 	tmux a -t $SESSION_NAME
 fi

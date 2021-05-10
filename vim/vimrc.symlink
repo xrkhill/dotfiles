@@ -56,6 +56,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tmhedberg/matchit'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'dhulihan/vim-rfc'
+"Plugin 'junegunn/fzf.vim'
 "Plugin 'mileszs/ack.vim'
 "Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'vim-scripts/ruby-matchit'
@@ -63,10 +64,13 @@ Plugin 'dhulihan/vim-rfc'
 "Plugin 'vim-scripts/SearchComplete'
 
 " Colors
-Plugin 'flazz/vim-colorschemes'
+"Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'altercation/vim-colors-solarized'
 "Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
+"Plugin 'doums/darcula'
+"Plugin 'casonadams/darcula'
+Plugin 'morhetz/gruvbox'
 
 " Files & Buffers
 "Plugin 'jeetsukumaran/vim-buffergator'
@@ -363,12 +367,14 @@ au BufNewFile,BufRead Jenkinsfile setf groovy
 " fatih/vim-go ----------------------------------------------
 
 " autosave go fmt setting, and use linter
-let g:go_fmt_autosave = 0
+let g:go_fmt_autosave = 1
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 nmap <leader>ge :GoIfErr<CR>
 nmap <leader>gf :GoFmt<CR>
 nmap <leader>gb :GoBuild<CR>
+nmap <leader>gt :GoTest<CR>
+nmap <leader>gr :GoRun<CR>
 
 " fatih/vim-go END ------------------------------------------
 
@@ -650,15 +656,23 @@ let g:miniBufExplBuffersNeeded = 2
 "hi MBEVisibleChanged       ctermfg=210 guifg=#F1266F guibg=fg
 "hi MBEVisibleActiveNormal  ctermfg=046 guifg=#A6DB29 guibg=fg
 "hi MBEVisibleActiveChanged ctermfg=214 guifg=#F1266F guibg=fg
-
 " MiniBufExplorer END ---------------------------------------
 
 " Colors ----------------------------------------------------
 set background=dark
 set guifont=Inconsolata:h16
-colorscheme space-vim-dark
+"colorscheme space-vim-dark
 "colorscheme molokai
 "colorscheme solarized
+"colorscheme darcula
+colorscheme gruvbox
+
+" checks if your terminal has 24-bit color support
+if (has("termguicolors"))
+    set termguicolors
+    hi LineNr ctermbg=NONE guibg=NONE
+endif
+
 " enable transparent term support
 "let g:solarized_termtrans=1
 

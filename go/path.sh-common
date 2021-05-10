@@ -2,3 +2,4 @@
 #export GOPATH=${GOPATH:-$PROJECTS/go}
 export GOPATH=$PROJECTS/go
 export PATH="$GOPATH/bin:$PATH"
+export PATH="/usr/local/opt/go@1.15/bin:$PATH"
